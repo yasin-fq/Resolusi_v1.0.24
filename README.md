@@ -24,7 +24,7 @@ https://lynk.id/qafstudio
 Kode ini hanya diminta **sekali** (saat aplikasi pertama dibuka). Setelah benar
 dimasukkan, aplikasi terbuka langsung tanpa kode lagi.
 
-> Untuk mengganti PIN: edit baris `var DEVELOPER_PIN = "135790";` di dalam
+> Untuk mengganti PIN: edit baris `var DEVELOPER_PIN = "123579";` di dalam
 > `resolusi.html`, ganti dengan 6 digit angka pilihanmu.
 
 ## ✨ Fitur Utama
@@ -78,7 +78,7 @@ Semua konfigurasi ada di dalam `resolusi.html`:
 
 | Yang diubah | Cari di file | Contoh |
 |-------------|--------------|--------|
-| **PIN akses** | `var DEVELOPER_PIN = "135790";` | ganti `"135790"` |
+| **PIN akses** | `var DEVELOPER_PIN = "123579";` | ganti `"123579"` |
 | **Nama area resolusi** | `CATEGORIES = [...]` | ubah `label:` |
 | **Kutipan motivasi** | `var QUOTES = [...]` | tambah/ubah array |
 | **Warna tema** | `:root { ... }` di `<style>` | ubah variabel CSS |
@@ -93,7 +93,7 @@ A: Ya, 100% offline. Setelah aplikasi terpasang, tidak butuh internet lagi.
 
 **Q: Bagaimana jika lupa PIN?**
 A: Hapus data situs di browser, atau hapus file lalu unduh/buka lagi — layar
-PIN akan muncul dan Anda bisa masukkan `135790`.
+PIN akan muncul dan Anda bisa masukkan `123579`.
 
 **Q: Bisakah data dipindah ke HP lain?**
 A: Bisa, lewat Ekspor Data (file JSON) lalu Impor di HP tujuan.
