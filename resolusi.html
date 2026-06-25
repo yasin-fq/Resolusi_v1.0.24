@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f97316">
+<meta name="description" content="Aplikasi resolusi tahun baru yang inspiratif & bekerja offline. Catat capaian, harapan, dan langkah terukur di 5 area kehidupan.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Resolusi">
+<title>Resolusi Tahun Baru — Wujudkan Versi Terbaikmu</title>
+<script>
+/* === PWA: web app manifest (data URI) + apple-touch-icon ===
+   Dibangun saat runtime agar encoding data URI andal. Saat file ini
+   di-host pada https, browser akan menawarkan "Install" / "Tambahkan ke
+   Layar Utama" sebagai PWA penuh (dengan ikon, nama & tema sendiri). */
+(function () {
+  try {
+    var svg =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">' +
+      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop offset="0" stop-color="#fbbf24"/><stop offset="0.5" stop-color="#fb923c"/><stop offset="1" stop-color="#fb7185"/>' +
+      '</linearGradient></defs>' +
+      '<rect width="512" height="512" rx="112" fill="url(#g)"/>' +
+      '<g fill="none" stroke="#fff" stroke-width="22"><circle cx="256" cy="256" r="130"/><circle cx="256" cy="256" r="78"/></g>' +
+      '<circle cx="256" cy="256" r="26" fill="#fff"/></svg>';
+    var iconSvg = "data:image/svg+xml," + encodeURIComponent(svg);
+    var iconPng180 =
+      "data:image/png;base64,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";
+    var manifest = {
+      name: "Resolusi Tahun Baru",
+      short_name: "Resolusi",
+      description: "Aplikasi resolusi tahun baru yang inspiratif & bekerja offline.",
+      start_url: ".",
+      scope: ".",
+      display: "standalone",
+      orientation: "portrait",
+      background_color: "#fff7ed",
+      theme_color: "#f97316",
+      icons: [
+        { src: iconSvg, sizes: "512x512", type: "image/svg+xml", purpose: "any" },
+        { src: iconSvg, sizes: "any", type: "image/svg+xml", purpose: "maskable" }
+      ]
+    };
+    var mLink = document.createElement("link");
+    mLink.rel = "manifest";
+    mLink.href = "data:application/manifest+json," + encodeURIComponent(JSON.stringify(manifest));
+    document.head.appendChild(mLink);
+    var aLink = document.createElement("link");
+    aLink.rel = "apple-touch-icon";
+    aLink.href = iconPng180;
+    document.head.appendChild(aLink);
+    var fLink = document.createElement("link");
+    fLink.rel = "icon";
+    fLink.type = "image/svg+xml";
+    fLink.href = iconSvg;
+    document.head.appendChild(fLink);
+  } catch (e) { /* abaikan */ }
+})();
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg1:#fffbeb; --bg2:#fff7ed; --bg3:#fff1f2;
+  --stone-50:#fafaf9; --stone-100:#f5f5f4; --stone-200:#e7e5e4;
+  --stone-300:#d6d3d1; --stone-400:#a8a29e; --stone-500:#78716c;
+  --stone-600:#57534e; --stone-700:#44403c; --stone-800:#292524;
+  --orange-400:#fb923c; --orange-500:#f97316;
+  --rose-400:#fb7185; --rose-500:#f43f5e;
+  --amber-400:#fbbf24;
+  --radius:14px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.05);
+  --shadow:0 4px 12px rgba(251,146,60,.12);
+  --shadow-lg:0 12px 32px rgba(0,0,0,.12);
+}
+html{ -webkit-text-size-adjust:100%; }
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color:var(--stone-800); line-height:1.5;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+  background-attachment: fixed; min-height:100vh; -webkit-font-smoothing:antialiased;
+}
+button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+input,textarea{ font-family:inherit; font-size:inherit; }
+textarea{ resize:vertical; }
+::placeholder{ color:var(--stone-400); }
+::-webkit-scrollbar{ width:10px; height:10px; }
+::-webkit-scrollbar-thumb{ background:var(--stone-300); border-radius:10px; border:2px solid transparent; background-clip:content-box; }
+::-webkit-scrollbar-thumb:hover{ background:var(--stone-400); background-clip:content-box; }
+
+#app{ min-height:100vh; display:flex; flex-direction:column; }
+.wrap{ width:100%; max-width:1000px; margin:0 auto; padding:0 16px; }
+
+/* ONBOARDING */
+.onb{ flex:1; display:flex; align-items:center; justify-content:center; padding:32px 16px; }
+.onb-card{
+  width:100%; max-width:560px; background:rgba(255,255,255,.92);
+  backdrop-filter:blur(8px); border-radius:24px; box-shadow:var(--shadow-lg);
+  border:1px solid #fff; overflow:hidden; position:relative;
+}
+.onb-hero{
+  position:relative; padding:32px 28px 48px; text-align:center;
+  background:linear-gradient(135deg,#fbbf24,#fb923c,#fb7185);
+}
+.onb-hero::before{
+  content:""; position:absolute; inset:0; opacity:.18;
+  background:
+    radial-gradient(circle at 15% 20%, #fff 0 8%, transparent 9%),
+    radial-gradient(circle at 85% 30%, #fff 0 6%, transparent 7%),
+    radial-gradient(circle at 40% 90%, #fff 0 7%, transparent 8%);
+}
+.onb-emoji{ font-size:48px; position:relative; animation:bob 2.2s ease-in-out infinite; }
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.onb-hero h1{ position:relative; color:#fff; font-size:clamp(22px,5vw,30px); font-weight:800; text-shadow:0 1px 2px rgba(0,0,0,.1); margin-top:8px; }
+.onb-hero p{ position:relative; color:rgba(255,255,255,.92); margin-top:6px; font-size:14px; font-weight:500; }
+.onb-body{ padding:0 24px 24px; margin-top:-48px; position:relative; z-index:10; }
+.onb-form{ background:#fff; border:1px solid #ffe4d4; border-radius:18px; padding:22px; box-shadow:var(--shadow-sm); }
+.field{ margin-bottom:20px; }
+.field label{ display:block; font-size:13px; font-weight:600; color:var(--stone-700); margin-bottom:8px; }
+.opt{ font-weight:400!important; color:var(--stone-400)!important; }
+.inp{
+  width:100%; border:2px solid var(--stone-200); background:var(--stone-50);
+  border-radius:12px; padding:12px 14px; color:var(--stone-800); outline:none;
+  transition:border-color .15s, background .15s, box-shadow .15s;
+}
+.inp:focus{ border-color:var(--orange-400); background:#fff; box-shadow:0 0 0 3px rgba(251,146,60,.25); }
+.inp.err{ border-color:#fda4af; box-shadow:0 0 0 3px rgba(251,113,133,.2); }
+.inp.big{ font-size:18px; font-weight:700; }
+.err-msg{ color:#e11d48; font-size:12px; margin-top:6px; }
+.cal-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.cal-btn{
+  border:2px solid var(--stone-200); background:#fff; border-radius:12px;
+  padding:12px 6px; text-align:center; transition:all .15s;
+}
+.cal-btn:hover{ border-color:#fed7aa; background:#fff7ed; }
+.cal-btn.active{ border-color:var(--orange-400); background:#fff7ed; box-shadow:var(--shadow-sm); transform:scale(1.02); }
+.cal-btn .ic{ font-size:24px; display:block; }
+.cal-btn .nm{ font-size:13px; font-weight:600; color:var(--stone-600); margin-top:4px; display:block; }
+.cal-btn.active .nm{ color:#c2410c; }
+.cal-btn .hn{ font-size:10px; color:var(--stone-400); margin-top:2px; line-height:1.2; display:block; }
+.btn-primary{
+  width:100%; border-radius:12px; padding:14px 20px; font-weight:700; font-size:15px;
+  color:#fff; background:linear-gradient(90deg,var(--orange-500),var(--rose-500));
+  box-shadow:0 8px 20px rgba(249,115,22,.35); transition:transform .15s, box-shadow .15s;
+}
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(249,115,22,.45); }
+.btn-primary:active{ transform:translateY(0); }
+.note{ text-align:center; font-size:12px; color:var(--stone-400); line-height:1.6; margin-top:14px; }
+
+/* HEADER */
+header.app-head{
+  position:sticky; top:0; z-index:30;
+  background:linear-gradient(90deg,#fbbf24,#fb923c,#fb7185);
+  box-shadow:0 2px 12px rgba(251,146,60,.25);
+}
+.head-inner{ display:flex; align-items:center; gap:12px; padding:14px 16px; max-width:1000px; margin:0 auto; }
+.head-ic{ font-size:28px; flex-shrink:0; }
+.head-titles{ flex:1; min-width:0; }
+.head-titles h1{ color:#fff; font-size:18px; font-weight:800; text-shadow:0 1px 2px rgba(0,0,0,.1); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.head-titles p{ color:rgba(255,255,255,.88); font-size:12px; font-weight:500; }
+.icon-btn{
+  flex-shrink:0; width:36px; height:36px; border-radius:50%;
+  background:rgba(255,255,255,.25); color:#fff; display:flex; align-items:center; justify-content:center;
+  transition:background .15s;
+}
+.icon-btn:hover{ background:rgba(255,255,255,.4); }
+.menu-wrap{ position:relative; flex-shrink:0; }
+.menu{
+  position:absolute; right:0; top:calc(100% + 8px); width:210px; background:#fff;
+  border-radius:14px; box-shadow:var(--shadow-lg); border:1px solid var(--stone-100);
+  padding:6px; z-index:50; animation:fadeSlide .15s ease;
+}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.menu button{ width:100%; text-align:left; padding:10px 12px; border-radius:10px; font-size:14px; color:var(--stone-700); display:flex; align-items:center; gap:10px; transition:background .1s; }
+.menu button:hover{ background:var(--stone-50); }
+.menu button.danger{ color:#e11d48; }
+.menu button.danger:hover{ background:#fff1f2; }
+.menu hr{ border:none; border-top:1px solid var(--stone-100); margin:6px 0; }
+.menu-backdrop{ position:fixed; inset:0; z-index:40; }
+
+/* DASHBOARD */
+main.app-main{ flex:1; padding:20px 0 28px; }
+main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
+.prog-card{ background:#fff; border:1px solid #ffe4d4; border-radius:18px; box-shadow:var(--shadow-sm); overflow:hidden; }
+.prog-inner{ background:linear-gradient(135deg,#fff7ed,#fffbeb,#fff1f2); padding:22px; }
+.prog-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; }
+.prog-label{ font-size:11px; font-weight:700; color:#ea580c; text-transform:uppercase; letter-spacing:.05em; }
+.prog-big{ font-size:28px; font-weight:800; color:var(--stone-800); margin-top:2px; }
+.prog-big .tot{ color:var(--stone-400); font-size:20px; font-weight:700; }
+.prog-big .lbl{ font-size:15px; color:var(--stone-500); font-weight:600; }
+.prog-pct{ font-size:42px; font-weight:900; background:linear-gradient(90deg,var(--orange-500),var(--rose-500)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; line-height:1; }
+.bar{ height:10px; background:var(--stone-100); border-radius:10px; overflow:hidden; margin-top:12px; }
+.bar.big{ height:12px; }
+.bar > div{ height:100%; border-radius:10px; transition:width .5s ease; }
+.bar-grad > div{ background:linear-gradient(90deg,#fb923c,#f43f5e); }
+.prog-note{ margin-top:12px; font-size:14px; color:var(--stone-500); }
+.prog-note.ok{ color:#059669; font-weight:600; display:flex; align-items:center; gap:6px; }
+.quote{
+  background:linear-gradient(90deg,#8b5cf6,#d946ef,#f43f5e);
+  color:#fff; border-radius:18px; padding:16px 20px; box-shadow:0 6px 18px rgba(217,70,239,.25);
+  position:relative; overflow:hidden;
+}
+.quote::before{ content:""; position:absolute; inset:0; opacity:.15;
+  background:radial-gradient(circle at 90% 10%, #fff 0 7%, transparent 8%), radial-gradient(circle at 10% 90%, #fff 0 5%, transparent 6%); }
+.quote-inner{ position:relative; display:flex; gap:12px; align-items:flex-start; }
+.quote .em{ font-size:28px; flex-shrink:0; }
+.quote p{ font-size:15px; font-weight:600; line-height:1.5; }
+.sec-title{ display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+.sec-title svg{ width:20px; height:20px; color:var(--orange-500); }
+.sec-title h2{ font-size:18px; font-weight:700; color:var(--stone-800); }
+.cat-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+@media(min-width:640px){ .cat-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(min-width:900px){ .cat-grid{ grid-template-columns:repeat(3,1fr); } }
+.cat-card{
+  text-align:left; width:100%; border:2px solid; border-radius:18px; padding:20px;
+  transition:transform .15s, box-shadow .15s; display:block;
+}
+.cat-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.cat-head{ display:flex; align-items:flex-start; gap:12px; }
+.cat-badge{ flex-shrink:0; width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; box-shadow:var(--shadow-sm); }
+.cat-info{ flex:1; min-width:0; }
+.cat-info h3{ font-size:16px; font-weight:700; color:var(--stone-800); line-height:1.25; }
+.cat-info p{ font-size:12px; color:var(--stone-500); margin-top:2px; line-height:1.4; }
+.cat-chev{ flex-shrink:0; color:var(--stone-300); transition:transform .15s, color .15s; }
+.cat-card:hover .cat-chev{ color:var(--stone-500); transform:translateX(2px); }
+.cat-prog{ margin-top:16px; }
+.cat-prog .lr{ display:flex; justify-content:space-between; font-size:12px; margin-bottom:6px; }
+.cat-empty{ margin-top:12px; font-size:12px; color:var(--stone-400); font-style:italic; }
+.c-rohani{ border-color:#a7f3d0; background:#ecfdf5; }
+.c-rohani .cat-badge{ background:linear-gradient(135deg,#34d399,#14b8a6); }
+.c-rohani .clr{ color:#047857; }
+.c-rohani .bar > div{ background:#10b981; }
+.c-finansial{ border-color:#fde68a; background:#fffbeb; }
+.c-finansial .cat-badge{ background:linear-gradient(135deg,#fbbf24,#eab308); }
+.c-finansial .clr{ color:#b45309; }
+.c-finansial .bar > div{ background:#f59e0b; }
+.c-fisik{ border-color:#fed7aa; background:#fff7ed; }
+.c-fisik .cat-badge{ background:linear-gradient(135deg,#fb923c,#ef4444); }
+.c-fisik .clr{ color:#c2410c; }
+.c-fisik .bar > div{ background:#f97316; }
+.c-pengembangan{ border-color:#f5d0fe; background:#fdf4ff; }
+.c-pengembangan .cat-badge{ background:linear-gradient(135deg,#e879f9,#a855f7); }
+.c-pengembangan .clr{ color:#a21caf; }
+.c-pengembangan .bar > div{ background:#d946ef; }
+.c-kebermanfaatan{ border-color:#fecdd3; background:#fff1f2; }
+.c-kebermanfaatan .cat-badge{ background:linear-gradient(135deg,#fb7185,#ec4899); }
+.c-kebermanfaatan .clr{ color:#be123c; }
+.c-kebermanfaatan .bar > div{ background:#f43f5e; }
+.filler{
+  border:2px dashed #fed7aa; background:rgba(255,247,237,.5); border-radius:18px; padding:20px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+}
+.filler .em{ font-size:30px; margin-bottom:8px; }
+.filler .t{ font-size:14px; font-weight:700; color:var(--stone-700); }
+.filler .s{ font-size:12px; color:var(--stone-500); margin-top:4px; line-height:1.5; }
+
+/* MODAL */
+.modal-backdrop{
+  position:fixed; inset:0; z-index:50; background:rgba(41,37,36,.45);
+  backdrop-filter:blur(4px); display:flex; align-items:flex-end; justify-content:center;
+  animation:fadeIn .2s ease;
+}
+@media(min-width:640px){ .modal-backdrop{ align-items:center; } }
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal{
+  position:relative; width:100%; max-width:600px; max-height:92vh; background:#fff;
+  border-radius:24px 24px 0 0; box-shadow:var(--shadow-lg); display:flex; flex-direction:column;
+  overflow:hidden; animation:slideUp .3s ease;
+}
+@media(min-width:640px){ .modal{ border-radius:24px; max-height:88vh; animation:zoomIn .25s ease; } }
+@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes zoomIn{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-head{ position:relative; padding:20px; color:#fff; display:flex; align-items:center; gap:12px; flex-shrink:0; }
+.modal-head::before{ content:""; position:absolute; inset:0; opacity:.15;
+  background:radial-gradient(circle at 85% 15%, #fff 0 8%, transparent 9%), radial-gradient(circle at 15% 90%, #fff 0 6%, transparent 7%); }
+.modal-badge{ position:relative; width:48px; height:48px; border-radius:14px; background:rgba(255,255,255,.25); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
+.modal-head h2{ position:relative; font-size:20px; font-weight:700; line-height:1.2; text-shadow:0 1px 2px rgba(0,0,0,.1); }
+.modal-head p{ position:relative; color:rgba(255,255,255,.88); font-size:13px; }
+.modal-close{ position:relative; flex-shrink:0; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.25); color:#fff; display:flex; align-items:center; justify-content:center; transition:background .15s; }
+.modal-close:hover{ background:rgba(255,255,255,.4); }
+.modal-prog{ flex-shrink:0; border-bottom:2px solid; padding:12px 20px; display:flex; align-items:center; gap:12px; }
+.modal-prog .lbl{ font-size:13px; font-weight:600; white-space:nowrap; }
+.modal-prog .bar{ flex:1; margin:0; height:8px; }
+.modal-prog .pct{ font-size:14px; font-weight:700; width:36px; text-align:right; }
+.modal-body{ flex:1; overflow-y:auto; padding:20px; }
+.modal-section{ margin-bottom:24px; }
+.modal-section:last-child{ margin-bottom:0; }
+.ms-head{ display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.ms-head svg{ width:16px; height:16px; }
+.ms-head h3{ font-size:14px; font-weight:700; color:var(--stone-700); }
+.ms-hint{ font-size:12px; color:var(--stone-400); margin-bottom:8px; }
+.ms-textarea{
+  width:100%; border:2px solid; border-radius:12px; padding:12px 14px; font-size:14px;
+  color:var(--stone-800); outline:none; transition:border-color .15s, box-shadow .15s; min-height:80px;
+}
+.ms-textarea:focus{ box-shadow:0 0 0 3px rgba(0,0,0,0); }
+.step-input{ display:flex; gap:8px; margin-bottom:12px; }
+.step-input .inp{ flex:1; }
+.step-add{ flex-shrink:0; border-radius:12px; padding:10px 14px; font-size:14px; font-weight:600; color:#fff; box-shadow:var(--shadow-sm); transition:opacity .15s; display:flex; align-items:center; gap:6px; }
+.step-add:disabled{ opacity:.4; cursor:not-allowed; }
+.step-list{ display:flex; flex-direction:column; gap:8px; }
+.step-item{ display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--stone-100); border-radius:12px; padding:10px 12px; transition:border-color .15s, box-shadow .15s; }
+.step-item:hover{ border-color:var(--stone-200); box-shadow:var(--shadow-sm); }
+.step-check{ flex-shrink:0; width:24px; height:24px; border-radius:7px; border:2px solid; display:flex; align-items:center; justify-content:center; transition:all .15s; }
+.step-check.done{ border-color:transparent; color:#fff; }
+.step-check:not(.done):hover{ opacity:.7; }
+.step-text{ flex:1; font-size:14px; line-height:1.4; }
+.step-text.done{ text-decoration:line-through; color:var(--stone-400); }
+.step-actions{ display:flex; gap:2px; opacity:0; transition:opacity .15s; }
+.step-item:hover .step-actions{ opacity:1; }
+.step-act{ width:28px; height:28px; border-radius:7px; color:var(--stone-400); display:flex; align-items:center; justify-content:center; transition:all .1s; }
+.step-act:hover{ background:var(--stone-100); color:var(--stone-700); }
+.step-act.del:hover{ background:#fff1f2; color:#e11d48; }
+.step-edit-inp{ flex:1; border:2px solid; border-radius:10px; padding:8px 10px; font-size:14px; outline:none; }
+.step-empty{ border:2px dashed; border-radius:12px; padding:24px; text-align:center; }
+.step-empty .em{ font-size:28px; }
+.step-empty .t{ font-size:14px; color:var(--stone-500); font-weight:600; margin-top:4px; }
+.step-empty .s{ font-size:12px; color:var(--stone-400); margin-top:2px; }
+.modal-foot{ flex-shrink:0; border-top:1px solid var(--stone-100); padding:12px 20px; background:var(--stone-50); display:flex; justify-content:space-between; align-items:center; }
+.modal-foot .sv{ font-size:12px; color:var(--stone-400); }
+.modal-done{ border-radius:12px; padding:8px 18px; font-size:14px; font-weight:600; color:#fff; box-shadow:var(--shadow-sm); transition:opacity .15s; }
+.modal-done:hover{ opacity:.9; }
+
+/* YEAR EDITOR */
+.ye-card{ background:#fff; border:1px solid #ffe4d4; border-radius:18px; box-shadow:var(--shadow-sm); padding:20px; }
+.ye-title{ display:flex; align-items:center; gap:8px; color:var(--stone-700); margin-bottom:16px; }
+.ye-title svg{ width:16px; height:16px; color:var(--orange-500); }
+.ye-title h3{ font-size:14px; font-weight:700; }
+.ye-row{ margin-bottom:14px; }
+.ye-row label{ display:block; font-size:12px; font-weight:600; color:var(--stone-600); margin-bottom:6px; }
+.ye-cal{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.ye-cal button{ border:2px solid var(--stone-200); background:#fff; border-radius:10px; padding:8px 4px; text-align:center; font-size:12px; font-weight:600; color:var(--stone-500); transition:all .12s; }
+.ye-cal button .ic{ font-size:18px; display:block; }
+.ye-cal button.active{ border-color:var(--orange-400); background:#fff7ed; color:#c2410c; }
+.ye-actions{ display:flex; gap:8px; margin-top:16px; }
+.ye-actions .btn-ghost{ flex:1; border:1px solid var(--stone-200); background:#fff; border-radius:10px; padding:8px 16px; font-size:14px; font-weight:600; color:var(--stone-600); }
+.ye-actions .btn-ghost:hover{ background:var(--stone-50); }
+.ye-actions .btn-save{ flex:1; border-radius:10px; padding:8px 16px; font-size:14px; font-weight:600; color:#fff; background:linear-gradient(90deg,var(--orange-500),var(--rose-500)); }
+.ye-actions .btn-save:disabled{ opacity:.4; cursor:not-allowed; }
+
+/* CONFIRM */
+.confirm-backdrop{ position:fixed; inset:0; z-index:60; background:rgba(41,37,36,.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; padding:16px; animation:fadeIn .2s; }
+.confirm{ position:relative; width:100%; max-width:360px; background:#fff; border-radius:20px; box-shadow:var(--shadow-lg); padding:24px; text-align:center; animation:zoomIn .2s; }
+.confirm .em{ font-size:40px; }
+.confirm h3{ font-size:18px; font-weight:700; color:var(--stone-800); margin-top:8px; }
+.confirm p{ font-size:14px; color:var(--stone-500); margin-top:8px; line-height:1.5; }
+.confirm-actions{ display:flex; gap:8px; margin-top:20px; }
+.confirm-actions .btn-ghost{ flex:1; border:1px solid var(--stone-200); background:#fff; border-radius:12px; padding:10px 16px; font-size:14px; font-weight:600; color:var(--stone-600); }
+.confirm-actions .btn-ghost:hover{ background:var(--stone-50); }
+.confirm-actions .btn-danger{ flex:1; border-radius:12px; padding:10px 16px; font-size:14px; font-weight:600; color:#fff; background:#f43f5e; }
+.confirm-actions .btn-danger:hover{ background:#e11d48; }
+
+/* FOOTER */
+footer.app-foot{ margin-top:auto; border-top:1px solid #ffedd5; background:rgba(255,255,255,.7); backdrop-filter:blur(8px); }
+.foot-inner{ max-width:1000px; margin:0 auto; padding:18px 16px; text-align:center; }
+.foot-inner p{ font-size:14px; color:var(--stone-500); font-weight:500; }
+.foot-inner .sub{ font-size:12px; color:var(--stone-400); margin-top:4px; }
+
+/* INSTALL BANNER */
+.install-banner{
+  background:linear-gradient(90deg,#fef3c7,#fed7aa);
+  border:1px solid #fcd34d; border-radius:14px; padding:14px 16px;
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+}
+.install-banner .em{ font-size:24px; flex-shrink:0; }
+.install-banner .tx{ flex:1; min-width:160px; }
+.install-banner .tx strong{ font-size:13px; color:#92400e; display:block; }
+.install-banner .tx span{ font-size:12px; color:#b45309; }
+.install-banner button{ flex-shrink:0; border-radius:10px; padding:8px 14px; font-size:13px; font-weight:600; color:#fff; background:#d97706; }
+.install-banner button:hover{ background:#b45309; }
+
+/* UTIL / SVG */
+svg.ic{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.spin{ animation:spin 1s linear infinite; }
+@keyframes spin{to{transform:rotate(360deg)}}
+.hidden{ display:none!important; }
+
+/* ACCESS GATE */
+.gate{ min-height:100vh; display:flex; flex-direction:column;
+  background:linear-gradient(135deg,#fbbf24,#fb923c,#fb7185); }
+.gate-main{ flex:1; display:flex; align-items:center; justify-content:center; padding:32px 16px; }
+.gate-card{ width:100%; max-width:380px; background:rgba(255,255,255,.96); backdrop-filter:blur(8px);
+  border-radius:24px; box-shadow:0 20px 50px rgba(0,0,0,.18); border:1px solid #fff; padding:28px; }
+.gate-card.shake{ animation:gateShake .4s ease-in-out; }
+@keyframes gateShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+.gate-head{ text-align:center; }
+.gate-lock{ display:inline-flex; align-items:center; justify-content:center; width:64px; height:64px;
+  border-radius:18px; background:linear-gradient(135deg,#fb923c,#f43f5e);
+  box-shadow:0 8px 20px rgba(251,146,60,.4); margin-bottom:12px; font-size:30px; }
+.gate-head h1{ font-size:20px; font-weight:800; color:var(--stone-800); }
+.gate-head p{ font-size:14px; color:var(--stone-500); margin-top:4px; }
+.gate-dots{ display:flex; align-items:center; justify-content:center; gap:14px; margin:28px 0; }
+.gate-dot{ width:16px; height:16px; border-radius:50%; border:2px solid var(--stone-300); background:#fff; transition:all .15s; }
+.gate-dot.fill{ background:var(--orange-500); border-color:var(--orange-500); transform:scale(1.12); }
+.gate-err{ height:24px; display:flex; align-items:center; justify-content:center; }
+.gate-err span{ font-size:12px; font-weight:600; color:#f43f5e; }
+.gate-pad{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px; }
+.gate-key{ height:64px; border-radius:16px; background:var(--stone-50); border:1px solid var(--stone-200);
+  font-size:24px; font-weight:700; color:var(--stone-700); transition:all .12s;
+  display:flex; align-items:center; justify-content:center; }
+.gate-key:hover{ background:#fff7ed; border-color:#fdba74; transform:translateY(-2px); }
+.gate-key:active{ transform:translateY(0); }
+.gate-key.del{ color:var(--stone-500); }
+.gate-key.del:disabled{ opacity:.4; cursor:not-allowed; transform:none; }
+.gate-key.del:disabled:hover{ background:var(--stone-50); border-color:var(--stone-200); transform:none; }
+.gate-note{ text-align:center; font-size:12px; color:var(--stone-400); margin-top:22px; line-height:1.55; }
+.gate-note strong{ color:var(--stone-500); }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+"use strict";
+/* =========================================================================
+   KONFIGURASI
+   ========================================================================= */
+var STORAGE_KEY = "resolusi-tb-data-v1";
+var ACCESS_KEY = "resolusi-activated-v1";
+
+// PIN 6 digit yang DITETAPKAN OLEH DEVELOPER. Pengguna hanya perlu
+// MEMASUKKAN pin ini sekali (saat aplikasi pertama dibuka) — tidak perlu
+// membuat/konfirmasi. Setelah benar, aplikasi ter-unlocked permanen.
+// Ubah nilai konstanta ini untuk mengganti PIN.
+var DEVELOPER_PIN = "135790";
+
+/* --- Kode akses (PIN 6 digit developer) ---
+   Layar kunci hanya muncul saat pertama dibuka. Pengguna memasukkan PIN
+   developer; jika benar → ditandai "activated" & tidak ditanyakan lagi. */
+function isActivated(){ try{ return localStorage.getItem(ACCESS_KEY) === "1"; }catch(e){ return false; } }
+function markActivated(){ try{ localStorage.setItem(ACCESS_KEY, "1"); }catch(e){} }
+function clearActivated(){ try{ localStorage.removeItem(ACCESS_KEY); }catch(e){} }
+
+var CATEGORIES = [
+  { id:"rohani", label:"Rohani", icon:"🕌", desc:"Pertumbuhan spiritual, ibadah & ketenangan batin",
+    cls:"c-rohani", grad:"linear-gradient(135deg,#34d399,#14b8a6)", bar:"#10b981", soft:"#ecfdf5", border:"#a7f3d0", text:"#047857" },
+  { id:"finansial", label:"Finansial", icon:"💰", desc:"Keuangan, tabungan & kemandirian ekonomi",
+    cls:"c-finansial", grad:"linear-gradient(135deg,#fbbf24,#eab308)", bar:"#f59e0b", soft:"#fffbeb", border:"#fde68a", text:"#b45309" },
+  { id:"fisik", label:"Fisik & Kebugaran", icon:"💪", desc:"Kesehatan tubuh, olahraga & energi harian",
+    cls:"c-fisik", grad:"linear-gradient(135deg,#fb923c,#ef4444)", bar:"#f97316", soft:"#fff7ed", border:"#fed7aa", text:"#c2410c" },
+  { id:"pengembangan", label:"Pengembangan Diri", icon:"📚", desc:"Soft skill & hard skill untuk tumbuh",
+    cls:"c-pengembangan", grad:"linear-gradient(135deg,#e879f9,#a855f7)", bar:"#d946ef", soft:"#fdf4ff", border:"#f5d0fe", text:"#a21caf" },
+  { id:"kebermanfaatan", label:"Sosial", icon:"🤝", desc:"Kontribusi & dampak positif untuk sesama",
+    cls:"c-kebermanfaatan", grad:"linear-gradient(135deg,#fb7185,#ec4899)", bar:"#f43f5e", soft:"#fff1f2", border:"#fecdd3", text:"#be123c" }
+];
+
+var CALENDAR_OPTS = [
+  { value:"masehi", label:"Masehi", icon:"📅", hint:"Kalender Gregorian", suffix:"M" },
+  { value:"hijriah", label:"Hijriah", icon:"🌙", hint:"Kalender Islam", suffix:"H" },
+  { value:"lainnya", label:"Lainnya", icon:"✨", hint:"Kalender kustom", suffix:"" }
+];
+
+var QUOTES = [
+  "Tahun baru, semangat baru! Setiap hari adalah kesempatan untuk memulai. 🌅",
+  "Impian tanpa tindakan hanyalah angan-angan. Mulai langkah kecilmu hari ini. 🚀",
+  "Jadilah 1% lebih baik setiap hari — setahun dari sekarang, kamu tak akan mengenal dirimu. 💪",
+  "Disiplin adalah jembatan antara tujuan dan pencapaian. 🌉",
+  "Kesuksesan adalah jumlah dari upaya kecil yang diulang setiap hari. 🌟",
+  "Jangan tunggu motivasi. Bergeraklah, maka motivasi akan mengikutimu. ⚡",
+  "Versi terbaik dari dirimu menantimu di ujung konsistensi. 🌱"
+];
+
+/* =========================================================================
+   STATE
+   ========================================================================= */
+var state = { data:null, onbDraft:null, accessUnlocked:false, view:"loading", activeCat:null, showMenu:false, editingYear:false, confirmReset:false, quoteIdx:0, editingStepId:null };
+
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,8); }
+
+function emptyCategories(){
+  var o = {};
+  CATEGORIES.forEach(function(c){ o[c.id] = { achievements:"", hopes:"", steps:[] }; });
+  return o;
+}
+
+function emptyData(){
+  var now = new Date().toISOString();
+  return { calendarType:"masehi", customCalendarName:"", year:"", name:"", categories:emptyCategories(), createdAt:now, updatedAt:now };
+}
+
+function suggestYear(type){
+  var now = new Date();
+  if(type==="masehi") return String(now.getFullYear()+1);
+  if(type==="hijriah") return "1447";
+  return "";
+}
+
+function load(){
+  try{
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return null;
+    var p = JSON.parse(raw);
+    if(!p || typeof p!=="object") return null;
+    return Object.assign(emptyData(), p, { categories: Object.assign(emptyCategories(), p.categories||{}) });
+  }catch(e){ return null; }
+}
+
+function save(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state.data)); }catch(e){}
+}
+
+function setData(d){ state.data = d; d.updatedAt = new Date().toISOString(); save(); render(); }
+function patchData(p){ setData(Object.assign({}, state.data, p)); }
+function patchCategory(catId, next){
+  var cats = Object.assign({}, state.data.categories);
+  cats[catId] = next;
+  setData(Object.assign({}, state.data, { categories:cats }));
+}
+
+/* =========================================================================
+   PROGRESS
+   ========================================================================= */
+function catProgress(cat){
+  var total = cat.steps.length, done = 0;
+  cat.steps.forEach(function(s){ if(s.done) done++; });
+  return { total:total, done:done, pct: total===0?0:Math.round(done/total*100) };
+}
+function overallProgress(){
+  var total=0, done=0;
+  CATEGORIES.forEach(function(c){
+    var p = catProgress(state.data.categories[c.id]);
+    total += p.total; done += p.done;
+  });
+  return { total:total, done:done, pct: total===0?0:Math.round(done/total*100) };
+}
+
+/* =========================================================================
+   SVG ICONS
+   ========================================================================= */
+function svg(name, cls){
+  var P = {
+    edit:'<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>',
+    trash:'<path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/>',
+    plus:'<path d="M12 5v14M5 12h14"/>',
+    check:'<path d="M20 6 9 17l-5-5"/>',
+    close:'<path d="M18 6 6 18M6 6l12 12"/>',
+    download:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>',
+    upload:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>',
+    reset:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/>',
+    spark:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/>',
+    pencil:'<path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/>',
+    chevron:'<path d="m9 18 6-6-6-6"/>',
+    target:'<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+    list:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
+    flag:'<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/>',
+    dots:'<circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/>'
+  };
+  return '<svg class="ic '+(cls||"")+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(P[name]||"")+'</svg>';
+}
+
+/* =========================================================================
+   RENDER ROOT
+   ========================================================================= */
+function render(){
+  var app = document.getElementById("app");
+  if(state.view === "loading"){ app.innerHTML = loadingHTML(); return; }
+  // Gerbang kode akses: tampil HANYA saat pertama dibuka (belum ada kode).
+  if(!state.accessUnlocked){ app.innerHTML = accessGateHTML(); bindAccessGate(); return; }
+  if(!state.data || !state.data.year){
+    if(!state.onbDraft){ state.onbDraft = emptyData(); state.onbDraft.year = suggestYear(state.onbDraft.calendarType); }
+    app.innerHTML = onboardingHTML(state.onbDraft); bindOnboarding(); return;
+  }
+  app.innerHTML = dashboardHTML(); bindDashboard();
+}
+
+function loadingHTML(){
+  return '<div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center">'+
+    '<div style="font-size:48px;animation:bob 1.5s ease-in-out infinite">🎯</div>'+
+    '<p style="margin-top:12px;color:#a8a29e;font-size:14px;font-weight:500">Memuat...</p></div>';
+}
+
+/* =========================================================================
+   ACCESS GATE HTML & BINDING
+   ========================================================================= */
+var gatePin = { pin:"", error:"", shake:false };
+
+function accessGateHTML(){
+  var cur = gatePin.pin;
+  var title = "Masukkan Kode Akses";
+  var sub = "Masukkan 6 digit kode akses untuk membuka aplikasi";
+  var dots = "";
+  for(var i=0;i<6;i++){
+    dots += '<span class="gate-dot'+(i<cur.length?" fill":"")+'"></span>';
+  }
+  var keys = "";
+  ["1","2","3","4","5","6","7","8","9"].forEach(function(d){
+    keys += '<button type="button" class="gate-key" data-k="'+d+'">'+d+'</button>';
+  });
+  keys += '<div style="height:64px"></div>'; // spacer
+  keys += '<button type="button" class="gate-key" data-k="0">0</button>';
+  keys += '<button type="button" class="gate-key del" data-k="del"'+(cur.length===0?" disabled":"")+' aria-label="Hapus">×</button>';
+
+  return '<div class="gate"><main class="gate-main"><div class="gate-card'+(gatePin.shake?" shake":"")+'">'+
+    '<div class="gate-head">'+
+      '<div class="gate-lock">🔒</div>'+
+      '<h1>'+title+'</h1>'+
+      '<p>'+sub+'</p>'+
+    '</div>'+
+    '<div class="gate-dots">'+dots+'</div>'+
+    '<div class="gate-err">'+(gatePin.error?'<span>'+gatePin.error+'</span>':'')+'</div>'+
+    '<div class="gate-pad">'+keys+'</div>'+
+    '<p class="gate-note">🔐 Kode akses hanya diminta <strong>sekali</strong> saat aplikasi pertama dibuka. Setelah benar, aplikasi terbuka langsung tanpa kode.</p>'+
+  '</div></main>'+
+  footerHTML()+
+  '</div>';
+}
+
+function bindAccessGate(){
+  var pad = document.querySelector(".gate-pad");
+  if(!pad) return;
+  pad.addEventListener("click", function(e){
+    var btn = e.target.closest("[data-k]"); if(!btn) return;
+    var k = btn.getAttribute("data-k");
+    gatePress(k);
+  });
+  document.addEventListener("keydown", gateKeyHandler);
+}
+
+function gateKeyHandler(e){
+  if(state.accessUnlocked){ document.removeEventListener("keydown", gateKeyHandler); return; }
+  if(e.key>="0" && e.key<="9"){ gatePress(e.key); }
+  else if(e.key==="Backspace"){ gatePress("del"); }
+}
+
+function gatePress(k){
+  if(gatePin.error) gatePin.error = "";
+  if(k === "del"){
+    gatePin.pin = gatePin.pin.slice(0,-1);
+    render(); return;
+  }
+  if(gatePin.pin.length >= 6) return;
+  var next = gatePin.pin + k;
+  gatePin.pin = next;
+  if(next.length === 6){
+    setTimeout(function(){
+      if(next === DEVELOPER_PIN){
+        markActivated();
+        gatePin = { pin:"", error:"", shake:false };
+        state.accessUnlocked = true;
+        document.removeEventListener("keydown", gateKeyHandler);
+        render();
+      } else {
+        gatePin.error = "Kode akses salah. Coba lagi.";
+        gatePin.shake = true;
+        gatePin.pin = "";
+        render();
+        setTimeout(function(){ gatePin.shake = false; }, 450);
+      }
+    }, 180);
+  } else {
+    render();
+  }
+}
+
+/* =========================================================================
+   ONBOARDING HTML
+   ========================================================================= */
+function onboardingHTML(d){
+  if(!d){ d = state.onbDraft || emptyData(); }
+  var yr = d.year || suggestYear(d.calendarType);
+  var calName = d.calendarType === "lainnya" ? d.customCalendarName : "";
+  return '<div class="onb"><div class="onb-card">'+
+    '<div class="onb-hero">'+
+      '<div class="onb-emoji">🎯</div>'+
+      '<h1>Resolusi Tahun Baru</h1>'+
+      '<p>Wujudkan versi terbaik dirimu, satu langkah terukur setiap hari</p>'+
+    '</div>'+
+    '<div class="onb-body"><div class="onb-form">'+
+      '<div class="field">'+
+        '<label>Siapa nama kamu? <span class="opt">(opsional)</span></label>'+
+        '<input id="ob-name" class="inp" type="text" placeholder="Tulis namamu di sini..." value="'+esc(d.name)+'">'+
+      '</div>'+
+      '<div class="field">'+
+        '<label>Pilih jenis penanggalan</label>'+
+        '<div class="cal-grid" id="ob-cal">'+
+          CALENDAR_OPTS.map(function(o){
+            var active = d.calendarType === o.value ? " active" : "";
+            return '<button type="button" data-cal="'+o.value+'" class="cal-btn'+active+'">'+
+              '<span class="ic">'+o.icon+'</span>'+
+              '<span class="nm">'+o.label+'</span>'+
+              '<span class="hn">'+o.hint+'</span></button>';
+          }).join("")+
+        '</div>'+
+      '</div>'+
+      (d.calendarType === "lainnya" ?
+        '<div class="field" id="ob-custom-wrap">'+
+          '<label>Nama penanggalan kustom</label>'+
+          '<input id="ob-custom" class="inp" type="text" placeholder="cth: Tahun Saka, Tahun Imlek, dll." value="'+esc(calName)+'">'+
+        '</div>' : '')+
+      '<div class="field">'+
+        '<label>Tahun <span class="opt">('+suffixFor(d.calendarType)+')</span></label>'+
+        '<input id="ob-year" class="inp big" type="text" inputmode="numeric" placeholder="'+yearPlaceholder(d.calendarType)+'" value="'+esc(yr)+'">'+
+      '</div>'+
+      '<button type="button" id="ob-start" class="btn-primary">Mulai Membuat Resolusi 🚀</button>'+
+      '<p class="note">Data tersimpan otomatis di perangkatmu (localStorage).<br>Aplikasi ini bekerja sepenuhnya offline tanpa internet.</p>'+
+    '</div></div>'+
+  '</div></div>'+
+  footerHTML();
+}
+
+function suffixFor(type){ return type==="hijriah"?"H":type==="masehi"?"M":""; }
+function yearPlaceholder(type){
+  if(type==="masehi") return "cth: 2026";
+  if(type==="hijriah") return "cth: 1447";
+  return "cth: 1";
+}
+
+function bindOnboarding(){
+  var nameEl = document.getElementById("ob-name");
+  var calWrap = document.getElementById("ob-cal");
+  var yearEl = document.getElementById("ob-year");
+  var startBtn = document.getElementById("ob-start");
+  var d = state.onbDraft;
+  if(!d){ d = emptyData(); d.year = suggestYear(d.calendarType); state.onbDraft = d; }
+
+  nameEl.addEventListener("input", function(){ d.name = nameEl.value; });
+
+  calWrap.addEventListener("click", function(e){
+    var btn = e.target.closest(".cal-btn");
+    if(!btn) return;
+    d.calendarType = btn.getAttribute("data-cal");
+    if(d.calendarType !== "lainnya"){ d.year = suggestYear(d.calendarType); d.customCalendarName = ""; }
+    render();
+  });
+
+  var customEl = document.getElementById("ob-custom");
+  if(customEl){ customEl.addEventListener("input", function(){ d.customCalendarName = customEl.value; }); }
+
+  yearEl.addEventListener("input", function(){ d.year = yearEl.value; yearEl.classList.remove("err"); });
+
+  startBtn.addEventListener("click", function(){
+    if(!d.year.trim()){ yearEl.classList.add("err"); yearEl.focus(); return; }
+    if(d.calendarType === "lainnya" && !d.customCalendarName.trim()){
+      var ce = document.getElementById("ob-custom");
+      if(ce){ ce.classList.add("err"); ce.focus(); }
+      return;
+    }
+    state.onbDraft = null;
+    setData(Object.assign(emptyData(), d, { categories: emptyCategories() }));
+  });
+}
+
+/* =========================================================================
+   DASHBOARD HTML
+   ========================================================================= */
+function dashboardHTML(){
+  var d = state.data;
+  var ov = overallProgress();
+  var sfx = suffixFor(d.calendarType);
+  var allDone = ov.total > 0 && ov.done === ov.total;
+
+  var html = '<div id="app-root" style="min-height:100vh;display:flex;flex-direction:column">';
+
+  // HEADER
+  html += '<header class="app-head"><div class="head-inner">'+
+    '<div class="head-ic">🎯</div>'+
+    '<div class="head-titles">'+
+      '<h1>'+(d.name ? "Resolusi "+esc(d.name) : "Resolusi Tahun Baru")+'</h1>'+
+      '<p>Tahun '+esc(d.year)+(sfx?" "+sfx:"")+'</p>'+
+    '</div>'+
+    '<button class="icon-btn" id="btn-edit-year" title="Ubah pengaturan tahun" aria-label="Ubah tahun">'+svg("edit")+'</button>'+
+    '<div class="menu-wrap">'+
+      '<button class="icon-btn" id="btn-menu" aria-label="Menu lainnya">'+svg("dots")+'</button>'+
+      (state.showMenu ?
+        '<div class="menu-backdrop" id="menu-backdrop"></div><div class="menu" id="menu">'+
+          '<button id="m-export">'+svg("download")+' Ekspor Data</button>'+
+          '<button id="m-import">'+svg("upload")+' Impor Data</button>'+
+          '<hr>'+
+          '<button class="danger" id="m-reset">'+svg("reset")+' Reset Semua</button>'+
+        '</div>' : '')+
+    '</div>'+
+    '<input type="file" id="import-file" accept="application/json,.json" style="display:none">'+
+  '</div></header>';
+
+  html += '<main class="app-main"><div class="wrap">';
+
+  // Year editor
+  if(state.editingYear){ html += yearEditorHTML(d); }
+
+  // Install banner
+  html += installBannerHTML();
+
+  // Progress card
+  html += '<section class="prog-card"><div class="prog-inner">'+
+    '<div class="prog-top">'+
+      '<div><div class="prog-label">Progres Keseluruhan</div>'+
+        '<div class="prog-big">'+ov.done+'<span class="tot">/'+ov.total+'</span> <span class="lbl">langkah</span></div></div>'+
+      '<div class="prog-pct">'+ov.pct+'%</div>'+
+    '</div>'+
+    '<div class="bar big bar-grad"><div style="width:'+ov.pct+'%"></div></div>'+
+    (allDone ? '<p class="prog-note ok">'+svg("check")+' Luar biasa! Semua langkah selesai. Kamu luar biasa! 🎉</p>' :
+     ov.total===0 ? '<p class="prog-note">Mulai tambahkan langkah terukur di setiap kategori untuk melihat progresmu tumbuh 🌱</p>' :
+     '<p class="prog-note">Teruslah melangkah! '+(ov.total-ov.done)+' langkah lagi menuju resolusi tercapai 💪</p>')+
+  '</div></section>';
+
+  // Quote
+  html += '<section class="quote"><div class="quote-inner">'+
+    '<div class="em">💬</div>'+
+    '<p>'+esc(QUOTES[state.quoteIdx])+'</p>'+
+  '</div></section>';
+
+  // Categories
+  html += '<section><div class="sec-title">'+svg("target")+'<h2>5 Area Resolusi</h2></div>';
+  html += '<div class="cat-grid">';
+  CATEGORIES.forEach(function(c){
+    var cat = d.categories[c.id];
+    var p = catProgress(cat);
+    var hasContent = cat.achievements.trim() || cat.hopes.trim() || p.total > 0;
+    html += '<button class="cat-card '+c.cls+'" data-cat="'+c.id+'">'+
+      '<div class="cat-head">'+
+        '<div class="cat-badge">'+c.icon+'</div>'+
+        '<div class="cat-info"><h3>'+c.label+'</h3><p>'+c.desc+'</p></div>'+
+        '<span class="cat-chev">'+svg("chevron")+'</span>'+
+      '</div>'+
+      '<div class="cat-prog">'+
+        '<div class="lr"><span class="clr" style="color:'+c.text+';font-weight:600">'+p.done+'/'+p.total+' langkah selesai</span><span style="color:#a8a29e;font-weight:500">'+p.pct+'%</span></div>'+
+        '<div class="bar"><div style="width:'+p.pct+'%;background:'+c.bar+'"></div></div>'+
+      '</div>'+
+      (!hasContent ? '<p class="cat-empty">Belum ada resolusi. Klik untuk mulai menulis ✍️</p>' :
+       p.total===0 ? '<p class="cat-empty" style="font-style:normal;color:#78716c">Sudah ada catatan. Tambahkan langkah terukur ya 💡</p>' : '')+
+    '</button>';
+  });
+  html += '<div class="filler"><div class="em">🌈</div><div class="t">Seimbanglah tumbuh</div><div class="s">Lima area saling menguatkan. Jangan fokus pada satu saja ya!</div></div>';
+  html += '</div></section>';
+
+  html += '</div></main>';
+  html += footerHTML();
+  html += '</div>';
+
+  if(state.activeCat){ html += categoryModalHTML(state.activeCat); }
+  if(state.confirmReset){ html += confirmResetHTML(); }
+
+  return html;
+}
+
+function installBannerHTML(){
+  if(localStorage.getItem("resolusi-install-dismissed") === "1") return "";
+  return '<div class="install-banner" style="margin-bottom:0">'+
+    '<div class="em">📲</div>'+
+    '<div class="tx"><strong>Pasang di HP / Komputer</strong><span>Buka file ini lalu "Tambahkan ke Layar Utama" untuk pakai seperti aplikasi</span></div>'+
+    '<button id="install-how">Cara Pasang</button>'+
+    '<button id="install-dismiss" style="background:#fff3cd;color:#92400e;border:1px solid #fcd34d">✕</button>'+
+  '</div>';
+}
+
+function yearEditorHTML(d){
+  return '<div class="ye-card" style="margin-bottom:20px">'+
+    '<div class="ye-title">'+svg("edit")+'<h3>Ubah Pengaturan Tahun</h3></div>'+
+    '<div class="ye-row"><label>Nama</label><input id="ye-name" class="inp" type="text" placeholder="Nama kamu (opsional)" value="'+esc(d.name)+'"></div>'+
+    '<div class="ye-row"><label>Jenis penanggalan</label><div class="ye-cal" id="ye-cal">'+
+      CALENDAR_OPTS.map(function(o){
+        var active = d.calendarType===o.value?" active":"";
+        return '<button type="button" data-cal="'+o.value+'" class="'+active+'"><span class="ic">'+o.icon+'</span>'+o.label+'</button>';
+      }).join("")+
+    '</div></div>'+
+    (d.calendarType==="lainnya" ? '<div class="ye-row"><label>Nama penanggalan kustom</label><input id="ye-custom" class="inp" type="text" placeholder="cth: Tahun Saka" value="'+esc(d.customCalendarName)+'"></div>' : '')+
+    '<div class="ye-row"><label>Tahun</label><input id="ye-year" class="inp" type="text" inputmode="numeric" value="'+esc(d.year)+'"></div>'+
+    '<div class="ye-actions">'+
+      '<button class="btn-ghost" id="ye-cancel">Batal</button>'+
+      '<button class="btn-save" id="ye-save">Simpan</button>'+
+    '</div>'+
+  '</div>';
+}
+
+function categoryModalHTML(catId){
+  var c = CATEGORIES.filter(function(x){return x.id===catId;})[0];
+  var cat = state.data.categories[catId];
+  var p = catProgress(cat);
+  return '<div class="modal-backdrop" id="modal-backdrop">'+
+    '<div class="modal" role="dialog" aria-modal="true" aria-label="Resolusi '+c.label+'">'+
+      '<div class="modal-head" style="background:'+c.grad+'">'+
+        '<div class="modal-badge">'+c.icon+'</div>'+
+        '<div style="flex:1;min-width:0"><h2>'+c.label+'</h2><p>'+c.desc+'</p></div>'+
+        '<button class="modal-close" id="modal-close" aria-label="Tutup">'+svg("close")+'</button>'+
+      '</div>'+
+      '<div class="modal-prog" style="background:'+c.soft+';border-color:'+c.border+'">'+
+        svg("target", "clr")+
+        '<span class="lbl" style="color:'+c.text+'">'+p.done+' dari '+p.total+' langkah selesai</span>'+
+        '<div class="bar"><div style="width:'+p.pct+'%;background:'+c.bar+'"></div></div>'+
+        '<span class="pct" style="color:'+c.text+'">'+p.pct+'%</span>'+
+      '</div>'+
+      '<div class="modal-body">'+
+        '<div class="modal-section">'+
+          '<div class="ms-head" style="color:'+c.text+'">'+svg("flag")+'<h3>Capaian Tahun Ini</h3></div>'+
+          '<p class="ms-hint">Apa yang sudah kamu capai pada area ini tahun sebelumnya?</p>'+
+          '<textarea id="m-ach" class="ms-textarea" rows="3" placeholder="Tulis capaianmu di sini... contoh: Rutin sholat tepat waktu, menabung 20% gaji, turun 3kg..." style="border-color:'+c.border+';background:'+c.soft+'" '+styleFocus(c.bar)+'>'+esc(cat.achievements)+'</textarea>'+
+        '</div>'+
+        '<div class="modal-section">'+
+          '<div class="ms-head" style="color:'+c.text+'">'+svg("spark")+'<h3>Harapan Tahun Depan</h3></div>'+
+          '<p class="ms-hint">Apa capaian yang kamu harapkan di tahun mendatang?</p>'+
+          '<textarea id="m-hop" class="ms-textarea" rows="3" placeholder="Tulis harapanmu di sini... contoh: Hafal 1 juz baru, punya dana darurat 6 bulan, lari 10km tanpa henti..." style="border-color:'+c.border+';background:'+c.soft+'" '+styleFocus(c.bar)+'>'+esc(cat.hopes)+'</textarea>'+
+        '</div>'+
+        '<div class="modal-section">'+
+          '<div class="ms-head" style="color:'+c.text+'">'+svg("list")+'<h3>Langkah-Langkah Terukur</h3></div>'+
+          '<p class="ms-hint">Pecah tujuan menjadi aksi kecil yang konkret & bisa diceklis.</p>'+
+          '<div class="step-input">'+
+            '<input id="m-newstep" class="inp" type="text" placeholder="cth: Olahraga 30 menit, 3x seminggu" style="border-color:'+c.border+';background:'+c.soft+'" '+styleFocus(c.bar)+'>'+
+            '<button class="step-add" id="m-addstep" style="background:'+c.bar+'" disabled>'+svg("plus","ic")+'<span class="hidden-sm" style="display:inline">Tambah</span></button>'+
+          '</div>'+
+          (cat.steps.length===0 ?
+            '<div class="step-empty" style="border-color:'+c.border+';background:'+c.soft+'"><div class="em">📝</div><div class="t">Belum ada langkah terukur</div><div class="s">Mulai tambahkan aksi kecil pertamamu di atas</div></div>' :
+            '<div class="step-list" id="m-steps">'+
+              cat.steps.map(function(s){ return stepItemHTML(s,c,catId); }).join("")+
+            '</div>')+
+        '</div>'+
+      '</div>'+
+      '<div class="modal-foot">'+
+        '<span class="sv">💾 Tersimpan otomatis</span>'+
+        '<button class="modal-done" id="modal-done" style="background:'+c.bar+'">Selesai</button>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+}
+
+function styleFocus(barColor){
+  return 'onfocus="this.style.boxShadow=\'0 0 0 3px '+hexA(barColor,0.3)+'\'" onblur="this.style.boxShadow=\'none\'"';
+}
+function hexA(hex,a){
+  var r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+  return "rgba("+r+","+g+","+b+","+a+")";
+}
+
+function stepItemHTML(s,c,catId){
+  if(state.editingStepId === s.id){
+    return '<div class="step-item"><input class="step-edit-inp" id="step-edit-'+s.id+'" value="'+esc(s.text)+'" style="border-color:'+c.border+'" '+styleFocus(c.bar)+'>'+
+      '<button class="step-act" data-act="commit" data-id="'+s.id+'" data-cat="'+catId+'" style="background:'+c.soft+';color:'+c.text+'">'+svg("check")+'</button></div>';
+  }
+  return '<div class="step-item">'+
+    '<button class="step-check '+(s.done?"done":"")+'" data-act="toggle" data-id="'+s.id+'" data-cat="'+catId+'" style="'+(s.done?"background:"+c.bar+";":"border-color:"+c.border+";color:"+c.text)+'" aria-label="'+(s.done?"Tandai belum selesai":"Tandai selesai")+'">'+(s.done?svg("check","ic"):"")+'</button>'+
+    '<span class="step-text '+(s.done?"done":"")+'">'+esc(s.text)+'</span>'+
+    '<div class="step-actions">'+
+      '<button class="step-act" data-act="edit" data-id="'+s.id+'" data-cat="'+catId+'" aria-label="Edit langkah">'+svg("pencil","ic")+'</button>'+
+      '<button class="step-act del" data-act="delete" data-id="'+s.id+'" data-cat="'+catId+'" aria-label="Hapus langkah">'+svg("trash","ic")+'</button>'+
+    '</div>'+
+  '</div>';
+}
+
+function confirmResetHTML(){
+  return '<div class="confirm-backdrop" id="confirm-backdrop"><div class="confirm">'+
+    '<div class="em">⚠️</div>'+
+    '<h3>Reset Semua Data?</h3>'+
+    '<p>Semua resolusi, capaian, dan langkah yang sudah kamu buat akan dihapus permanen. Tindakan ini tidak bisa dibatalkan.</p>'+
+    '<div class="confirm-actions">'+
+      '<button class="btn-ghost" id="cf-cancel">Batal</button>'+
+      '<button class="btn-danger" id="cf-ok">Ya, Reset</button>'+
+    '</div>'+
+  '</div></div>';
+}
+
+function footerHTML(){
+  return '<footer class="app-foot"><div class="foot-inner">'+
+    '<p>© 2026 Resolusi 1.0.24 (Beta) | Hak Cipta Dilindungi</p>'+
+    '<p class="sub">Data tersimpan aman di perangkatmu.</p>'+
+  '</div></footer>';
+}
+
+/* =========================================================================
+   DASHBOARD BINDINGS
+   ========================================================================= */
+function bindDashboard(){
+  var btnEditYear = document.getElementById("btn-edit-year");
+  btnEditYear.addEventListener("click", function(){ state.editingYear = !state.editingYear; render(); });
+
+  var btnMenu = document.getElementById("btn-menu");
+  btnMenu.addEventListener("click", function(e){ e.stopPropagation(); state.showMenu = !state.showMenu; render(); });
+  var bd = document.getElementById("menu-backdrop");
+  if(bd){ bd.addEventListener("click", function(){ state.showMenu=false; render(); }); }
+  var mExport = document.getElementById("m-export");
+  if(mExport) mExport.addEventListener("click", exportData);
+  var mImport = document.getElementById("m-import");
+  if(mImport) mImport.addEventListener("click", function(){ document.getElementById("import-file").click(); });
+  var mReset = document.getElementById("m-reset");
+  if(mReset) mReset.addEventListener("click", function(){ state.showMenu=false; state.confirmReset=true; render(); });
+
+  var importFile = document.getElementById("import-file");
+  importFile.addEventListener("change", function(e){
+    var f = e.target.files[0]; if(!f) return;
+    var reader = new FileReader();
+    reader.onload = function(){
+      try{ var p = JSON.parse(String(reader.result)); if(p && p.year){ setData(Object.assign(emptyData(), p, {categories:Object.assign(emptyCategories(), p.categories||{})})); } }catch(err){}
+    };
+    reader.readAsText(f); e.target.value="";
+  });
+
+  var instHow = document.getElementById("install-how");
+  if(instHow) instHow.addEventListener("click", function(){ showInstallGuide(); });
+  var instDis = document.getElementById("install-dismiss");
+  if(instDis) instDis.addEventListener("click", function(){ localStorage.setItem("resolusi-install-dismissed","1"); render(); });
+
+  bindYearEditor();
+
+  document.querySelectorAll(".cat-card").forEach(function(card){
+    card.addEventListener("click", function(){ state.activeCat = card.getAttribute("data-cat"); state.editingStepId=null; render(); });
+  });
+
+  if(state.activeCat){ bindModal(); }
+  if(state.confirmReset){
+    document.getElementById("cf-cancel").addEventListener("click", function(){ state.confirmReset=false; render(); });
+    document.getElementById("cf-ok").addEventListener("click", function(){
+      state.confirmReset=false;
+      localStorage.removeItem(STORAGE_KEY);
+      clearActivated();
+      state.accessUnlocked = false;
+      state.data = emptyData();
+      state.onbDraft = emptyData(); state.onbDraft.year = suggestYear(state.onbDraft.calendarType);
+      gatePin = { pin:"", error:"", shake:false };
+      render();
+    });
+    document.getElementById("confirm-backdrop").addEventListener("click", function(e){ if(e.target.id==="confirm-backdrop"){ state.confirmReset=false; render(); } });
+  }
+}
+
+function bindYearEditor(){
+  var yeCal = document.getElementById("ye-cal");
+  if(!yeCal) return;
+  var d = state.data;
+  yeCal.addEventListener("click", function(e){
+    var btn = e.target.closest("button"); if(!btn) return;
+    d.calendarType = btn.getAttribute("data-cal");
+    state.editingYear = true; render();
+  });
+  var yeName = document.getElementById("ye-name");
+  yeName.addEventListener("input", function(){ d.name = yeName.value; });
+  var yeCustom = document.getElementById("ye-custom");
+  if(yeCustom) yeCustom.addEventListener("input", function(){ d.customCalendarName = yeCustom.value; });
+  var yeYear = document.getElementById("ye-year");
+  yeYear.addEventListener("input", function(){ d.year = yeYear.value; });
+  document.getElementById("ye-cancel").addEventListener("click", function(){
+    state.data = load() || emptyData(); state.editingYear=false; render();
+  });
+  document.getElementById("ye-save").addEventListener("click", function(){
+    var customOk = d.calendarType!=="lainnya" || (d.customCalendarName && d.customCalendarName.trim());
+    var yearOk = d.year && d.year.trim();
+    if(!customOk || !yearOk){ return; }
+    save(); state.editingYear=false; render();
+  });
+}
+
+function bindModal(){
+  var c = CATEGORIES.filter(function(x){return x.id===state.activeCat;})[0];
+  var cat = state.data.categories[c.id];
+
+  var bd = document.getElementById("modal-backdrop");
+  bd.addEventListener("click", function(e){ if(e.target===bd){ closeModal(); } });
+  document.getElementById("modal-close").addEventListener("click", closeModal);
+  document.getElementById("modal-done").addEventListener("click", closeModal);
+
+  var ach = document.getElementById("m-ach");
+  var hop = document.getElementById("m-hop");
+  ach.addEventListener("input", function(){ cat.achievements = ach.value; save(); updateModalProgress(c,cat); });
+  hop.addEventListener("input", function(){ cat.hopes = hop.value; save(); });
+
+  var newStep = document.getElementById("m-newstep");
+  var addBtn = document.getElementById("m-addstep");
+  newStep.addEventListener("input", function(){ addBtn.disabled = !newStep.value.trim(); });
+  newStep.addEventListener("keydown", function(e){ if(e.key==="Enter"){ e.preventDefault(); doAddStep(); } });
+  addBtn.addEventListener("click", doAddStep);
+
+  function doAddStep(){
+    var t = newStep.value.trim(); if(!t) return;
+    cat.steps.push({ id:uid(), text:t, done:false });
+    save(); state.editingStepId=null; render();
+    setTimeout(function(){ var ns=document.getElementById("m-newstep"); if(ns){ ns.focus(); } }, 0);
+  }
+
+  var stepsEl = document.getElementById("m-steps");
+  if(stepsEl){
+    stepsEl.addEventListener("click", function(e){
+      var btn = e.target.closest("[data-act]"); if(!btn) return;
+      var act = btn.getAttribute("data-act");
+      var id = btn.getAttribute("data-id");
+      var catId = btn.getAttribute("data-cat");
+      var cc = state.data.categories[catId];
+      if(act==="toggle"){
+        cc.steps.forEach(function(s){ if(s.id===id) s.done = !s.done; });
+        save(); render();
+      } else if(act==="delete"){
+        cc.steps = cc.steps.filter(function(s){ return s.id!==id; });
+        save(); render();
+      } else if(act==="edit"){
+        state.editingStepId = id; render();
+        setTimeout(function(){ var el=document.getElementById("step-edit-"+id); if(el){ el.focus(); el.select(); } },0);
+      } else if(act==="commit"){
+        var el = document.getElementById("step-edit-"+id);
+        var txt = el ? el.value.trim() : "";
+        if(txt){ cc.steps.forEach(function(s){ if(s.id===id) s.text = txt; }); save(); }
+        else { cc.steps = cc.steps.filter(function(s){ return s.id!==id; }); save(); }
+        state.editingStepId=null; render();
+      }
+    });
+    stepsEl.addEventListener("keydown", function(e){
+      if(e.target.classList.contains("step-edit-inp")){
+        if(e.key==="Enter"){ e.preventDefault(); var id=e.target.id.replace("step-edit-",""); commitStep(id); }
+        if(e.key==="Escape"){ state.editingStepId=null; render(); }
+      }
+    });
+    stepsEl.addEventListener("focusout", function(e){
+      if(e.target.classList.contains("step-edit-inp")){
+        setTimeout(function(){
+          if(state.editingStepId === e.target.id.replace("step-edit-","")){
+            commitStep(e.target.id.replace("step-edit-",""));
+          }
+        }, 150);
+      }
+    });
+  }
+
+  function commitStep(id){
+    var el = document.getElementById("step-edit-"+id);
+    var txt = el ? el.value.trim() : "";
+    var cc = state.data.categories[c.id];
+    if(txt){ cc.steps.forEach(function(s){ if(s.id===id) s.text=txt; }); }
+    else { cc.steps = cc.steps.filter(function(s){ return s.id!==id; }); }
+    save(); state.editingStepId=null; render();
+  }
+}
+
+function closeModal(){ state.activeCat=null; state.editingStepId=null; render(); }
+
+function updateModalProgress(c, cat){
+  var p = catProgress(cat);
+  var progBar = document.querySelector(".modal-prog .bar > div");
+  if(progBar) progBar.style.width = p.pct+"%";
+  var lbls = document.querySelectorAll(".modal-prog .lbl");
+  if(lbls[0]) lbls[0].textContent = p.done+" dari "+p.total+" langkah selesai";
+  var pct = document.querySelector(".modal-prog .pct");
+  if(pct) pct.textContent = p.pct+"%";
+}
+
+/* =========================================================================
+   EXPORT
+   ========================================================================= */
+function exportData(){
+  state.showMenu=false;
+  try{
+    var blob = new Blob([JSON.stringify(state.data,null,2)], {type:"application/json"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = "resolusi-"+(state.data.year||"tahun")+".json";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }catch(e){}
+  render();
+}
+
+/* =========================================================================
+   INSTALL GUIDE
+   ========================================================================= */
+function showInstallGuide(){
+  var isFile = location.protocol === "file:";
+  var isHttps = location.protocol === "https:";
+  var hostLine = isFile
+    ? "⚠️ Saat ini kamu membuka dari <strong>file lokal (file://)</strong>."
+    : (isHttps
+      ? "✅ Saat ini dibuka dari <strong>https</strong> — aplikasi sudah bisa di-install penuh!"
+      : "⚠️ Saat ini dibuka dari <strong>http</strong> (belum https).");
+  var html = '<div class="confirm-backdrop" id="ig-backdrop"><div class="confirm" style="max-width:440px;text-align:left;max-height:90vh;overflow-y:auto">'+
+    '<div style="text-align:center"><div class="em" style="font-size:36px">📲</div>'+
+    '<h3 style="margin-top:6px">Cara Pasang di Layar Utama</h3></div>'+
+    '<div style="margin:10px 0 14px;padding:10px 12px;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;font-size:12px;color:#9a3412;line-height:1.55">'+
+      hostLine+' Beberapa browser (Chrome/Edge Android) hanya menampilkan tombol <strong>"Install"</strong> pada alamat <strong>https</strong>. '+(isFile?'Untuk install penuh di Android, hosting file di layanan https gratis (lihat bawah).':'')+
+    '</div>'+
+    '<div style="font-size:13px;color:#57534e;line-height:1.6">'+
+      '<p style="font-weight:700;color:#44403c;margin-bottom:6px">📱 iPhone / iPad (paling mudah — tanpa https):</p>'+
+      '<p style="margin-left:12px">1. Buka <code style="background:#f5f5f4;padding:1px 5px;border-radius:4px">resolusi.html</code> di <strong>Safari</strong>.<br>'+
+      '2. Tap tombol <strong>Bagikan □↑</strong> → <strong>"Tambahkan ke Layar Utama"</strong>.<br>'+
+      '3. Ikon muncul di layar — buka seperti aplikasi, bekerja offline. ✅</p>'+
+      '<p style="font-weight:700;color:#44403c;margin:12px 0 6px">🤖 Android (untuk install penuh):</p>'+
+      '<p style="margin-left:12px"><strong>Opsinya:</strong><br>'+
+      '• <em>Pintasan cepat (tanpa https):</em> buka file di Chrome → menu ⋮ → "Tambahkan ke Layar Utama" (jadi pintasan).<br>'+
+      '• <em>Install penuh (butuh https):</em> hosting file di <strong>Netlify Drop</strong> (drag & drop, gratis, otomatis https) → buka link https-nya di Chrome → akan muncul tombol <strong>"Install"</strong> / menu ⋮ → "Install app".</p>'+
+      '<p style="font-weight:700;color:#44403c;margin:12px 0 6px">💻 Komputer:</p>'+
+      '<p style="margin-left:12px">• Klik ganda <code style="background:#f5f5f4;padding:1px 5px;border-radius:4px">resolusi.html</code> → terbuka di browser (offline).<br>'+
+      '• Atau hosting di https, lalu di Chrome/Edge klik ikon <strong>Install</strong> di address bar untuk jadi aplikasi desktop.</p>'+
+      '<p style="font-weight:700;color:#44403c;margin:12px 0 6px">🌐 Hosting https gratis (rekomendasi Android):</p>'+
+      '<p style="margin-left:12px">• <strong>Netlify Drop</strong> — drag folder berisi <code style="background:#f5f5f4;padding:1px 5px;border-radius:4px">resolusi.html</code> ke app.netlify.com/drop<br>'+
+      '• <strong>GitHub Pages</strong> — upload file ke repo → Settings → Pages<br>'+
+      '• <strong>Cloudflare Pages</strong> / <strong>Vercel</strong> — connect repo, deploy</p>'+
+      '<p style="margin-top:12px;font-size:12px;color:#a8a29e">💡 Data resolusi tersimpan di tiap perangkat. Pindahkan via Ekspor/Impor Data bila perlu.</p>'+
+    '</div>'+
+    '<div class="confirm-actions" style="margin-top:16px"><button class="btn-ghost" id="ig-close" style="flex:1">Mengerti</button></div>'+
+  '</div></div>';
+  var div = document.createElement("div"); div.innerHTML = html;
+  document.body.appendChild(div.firstChild);
+  document.getElementById("ig-close").addEventListener("click", function(){ document.getElementById("ig-backdrop").remove(); });
+  document.getElementById("ig-backdrop").addEventListener("click", function(e){ if(e.target.id==="ig-backdrop"){ document.getElementById("ig-backdrop").remove(); } });
+}
+
+/* =========================================================================
+   ESCAPE
+   ========================================================================= */
+function esc(s){
+  if(s==null) return "";
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+}
+
+/* =========================================================================
+   INIT
+   ========================================================================= */
+function init(){
+  state.data = load();
+  if(!state.data){
+    state.onbDraft = emptyData();
+    state.onbDraft.year = suggestYear(state.onbDraft.calendarType);
+  }
+  state.accessUnlocked = isActivated();
+  state.view = "app";
+  state.quoteIdx = Math.floor(Math.random()*QUOTES.length);
+  setInterval(function(){ state.quoteIdx = (state.quoteIdx+1)%QUOTES.length; if(state.accessUnlocked && state.data && state.data.year && !state.activeCat) render(); }, 8000);
+  document.addEventListener("keydown", function(e){
+    if(e.key==="Escape"){
+      if(state.confirmReset){ state.confirmReset=false; render(); }
+      else if(state.activeCat){ closeModal(); }
+      else if(state.showMenu){ state.showMenu=false; render(); }
+      else if(state.editingYear){ state.editingYear=false; render(); }
+    }
+  });
+  render();
+}
+
+if(document.readyState==="loading"){ document.addEventListener("DOMContentLoaded", init); }
+else { init(); }
+</script>
+</body>
+</html>
