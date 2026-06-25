@@ -64,17 +64,6 @@ dimasukkan, aplikasi terbuka langsung tanpa kode lagi.
 > 💡 Setelah terpasang, aplikasi bisa dibuka **tanpa internet**. Data tersimpan
 > otomatis di perangkat.
 
-## 🌐 Hosting https Gratis (opsional)
-
-Jika belum punya hosting https, gunakan layanan gratis berikut:
-
-| Layanan | Cara | URL |
-|---------|------|-----|
-| **Netlify Drop** | Drag & drop folder berisi `resolusi.html`, instan | https://app.netlify.com/drop |
-| **GitHub Pages** | Upload ke repo → Settings → Pages | https://pages.github.com |
-| **Cloudflare Pages** | Connect repo, deploy | https://pages.cloudflare.com |
-| **Vercel** | Connect repo, deploy | https://vercel.com |
-
 ## 💾 Manajemen Data
 
 - Data tersimpan **otomatis** di browser perangkat (localStorage) — tidak perlu internet.
