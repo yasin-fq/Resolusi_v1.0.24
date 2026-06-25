@@ -3,15 +3,14 @@
 Aplikasi web resolusi tahun baru yang inspiratif & **bekerja 100% offline**.
 Catat capaian, harapan, dan langkah terukur di **5 area kehidupan**.
 
-> Aplikasi ini dibuat dengan HTML, CSS, dan JavaScript murni — **tanpa link
-> eksternal sama sekali**. Cukup satu file `resolusi.html`, bisa dijalankan
-> tanpa internet.
+> Dibuat dengan HTML, CSS, dan JavaScript murni — tanpa link eksternal. Bisa
+> dijalankan tanpa internet, dan terpasang sebagai PWA di layar utama.
 
 ## 📦 Isi Paket Distribusi
 
 | File | Keterangan |
 |------|------------|
-| `resolusi.html` | **Aplikasi utama** — satu file berisi semua (HTML+CSS+JS), bisa langsung dibuka |
+| `resolusi.html` | **Aplikasi utama** — satu file berisi semua (HTML+CSS+JS+PWA), siap di-hosting |
 | `README.md` | File panduan ini |
 
 ## 🔐 Kode Akses (PIN)
@@ -37,40 +36,41 @@ dimasukkan, aplikasi terbuka langsung tanpa kode lagi.
 - **Kode akses (PIN)** mengunci konten saat pertama dibuka
 - **Ekspor / Impor Data** (backup JSON) untuk pindah antar perangkat
 - **Reset Semua** untuk mulai dari awal
-- **PWA-ready**: bisa di-install ke layar utama seperti aplikasi native
+- **PWA** — bisa dipasang ke layar utama seperti aplikasi native
 - **100% offline** — data tersimpan di localStorage browser perangkat
 
-## 📱 Cara Pakai & Pasang
+## 📱 Cara Memasang di Layar Utama (PWA)
 
-### 💻 Di Komputer (Windows/Mac/Linux)
-1. Simpan `resolusi.html` di folder yang mudah dijangkau.
-2. Klik ganda file → otomatis terbuka di browser → langsung bisa dipakai offline.
-3. (Opsional) Tarik tab browser ke taskbar/dock untuk akses cepat.
-
-### 📱 iPhone / iPad (paling mudah — tanpa https)
-1. Pindahkan `resolusi.html` ke HP (via AirDrop, iCloud, email, atau Files app).
-2. Buka file di **Safari**.
-3. Tap tombol **Bagikan □↑** → **"Tambahkan ke Layar Utama"**.
-4. Ikon muncul di layar → buka seperti aplikasi, bekerja offline penuh. ✅
+> Asumsi: aplikasi sudah di-hosting pada alamat **https** (mis. Vercel, Netlify,
+> GitHub Pages, atau hosting https Anda sendiri).
 
 ### 🤖 Android
-**Opsi 1 — Pintasan cepat (tanpa https):**
-1. Pindahkan file ke HP (WhatsApp, email, USB).
-2. Buka file di **Chrome**.
-3. Tap menu **⋮** → **"Tambahkan ke Layar Utama"** (jadi pintasan).
+1. Buka aplikasi di **Chrome**.
+2. Tap menu **⋮** di kanan atas.
+3. Pilih **"Tambahkan ke Layar Utama"** atau **"Install app"**.
+4. Ikon muncul di layar HP — buka seperti aplikasi biasa.
 
-**Opsi 2 — Install penuh (butuh https):**
-1. Hosting file di **Netlify Drop** (gratis, otomatis https):
-   - Buka https://app.netlify.com/drop
-   - Drag folder berisi `resolusi.html` ke sana
-   - Dapat URL https langsung
-2. Buka URL https-nya di **Chrome Android**.
-3. Akan muncul tombol **"Install"** (atau menu ⋮ → "Install app").
+### 🍎 iPhone / iPad
+1. Buka aplikasi di **Safari**.
+2. Tap tombol **Bagikan □↑**.
+3. Pilih **"Tambah ke Layar Utama"**.
+4. Buka dari ikon di layar — bekerja offline penuh.
 
-### 🌐 Hosting https gratis (opsional, untuk Android install penuh)
+### 💻 Komputer (Windows/Mac/Linux)
+1. Buka aplikasi di **Chrome** atau **Edge**.
+2. Klik ikon **Install** di address bar (ikon ⊕ atau tanda +).
+3. Aplikasi terpasang sebagai aplikasi desktop dengan ikon sendiri — bisa dibuka dari Start Menu / Launchpad.
+
+> 💡 Setelah terpasang, aplikasi bisa dibuka **tanpa internet**. Data tersimpan
+> otomatis di perangkat.
+
+## 🌐 Hosting https Gratis (opsional)
+
+Jika belum punya hosting https, gunakan layanan gratis berikut:
+
 | Layanan | Cara | URL |
 |---------|------|-----|
-| **Netlify Drop** | Drag & drop folder, instan | https://app.netlify.com/drop |
+| **Netlify Drop** | Drag & drop folder berisi `resolusi.html`, instan | https://app.netlify.com/drop |
 | **GitHub Pages** | Upload ke repo → Settings → Pages | https://pages.github.com |
 | **Cloudflare Pages** | Connect repo, deploy | https://pages.cloudflare.com |
 | **Vercel** | Connect repo, deploy | https://vercel.com |
@@ -100,7 +100,7 @@ Semua konfigurasi ada di dalam `resolusi.html`:
 A: Ya. Semua data tersimpan lokal di perangkat Anda, tidak dikirim ke server mana pun.
 
 **Q: Apakah bisa dipakai tanpa internet?**
-A: Ya, 100% offline. Setelah file dibuka sekali, tidak butuh internet lagi.
+A: Ya, 100% offline. Setelah aplikasi terpasang, tidak butuh internet lagi.
 
 **Q: Bagaimana jika lupa PIN?**
 A: Hapus data situs di browser, atau hapus file lalu unduh/buka lagi — layar
