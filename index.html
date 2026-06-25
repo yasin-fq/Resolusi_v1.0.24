@@ -572,33 +572,23 @@ function loadingHTML(){
 /* =========================================================================
    ACCESS GATE HTML & BINDING
    ========================================================================= */
-var gatePin = { pin:"", error:"", shake:false };
+var gatePin = { code:"", error:"", shake:false };
 
 function accessGateHTML(){
-  var cur = gatePin.pin;
-  var title = "Masukkan Kode Akses";
-  var sub = "Masukkan 6 digit kode akses untuk membuka aplikasi";
-  var dots = "";
-  for(var i=0;i<6;i++){
-    dots += '<span class="gate-dot'+(i<cur.length?" fill":"")+'"></span>';
-  }
-  var keys = "";
-  ["1","2","3","4","5","6","7","8","9"].forEach(function(d){
-    keys += '<button type="button" class="gate-key" data-k="'+d+'">'+d+'</button>';
-  });
-  keys += '<div style="height:64px"></div>'; // spacer
-  keys += '<button type="button" class="gate-key" data-k="0">0</button>';
-  keys += '<button type="button" class="gate-key del" data-k="del"'+(cur.length===0?" disabled":"")+' aria-label="Hapus">×</button>';
-
   return '<div class="gate"><main class="gate-main"><div class="gate-card'+(gatePin.shake?" shake":"")+'">'+
     '<div class="gate-head">'+
       '<div class="gate-lock">🔒</div>'+
-      '<h1>'+title+'</h1>'+
-      '<p>'+sub+'</p>'+
+      '<h1>Masukkan Kode Akses</h1>'+
+      '<p>Masukkan kode akses untuk membuka aplikasi</p>'+
     '</div>'+
-    '<div class="gate-dots">'+dots+'</div>'+
-    '<div class="gate-err">'+(gatePin.error?'<span>'+gatePin.error+'</span>':'')+'</div>'+
-    '<div class="gate-pad">'+keys+'</div>'+
+    '<form id="gate-form" style="margin-top:28px">'+
+      '<input id="gate-input" type="password" inputmode="text" autocomplete="off" '+
+        'value="'+esc(gatePin.code)+'" placeholder="Ketik kode akses di sini..." '+
+        'style="width:100%;border:2px solid var(--stone-200);background:var(--stone-50);border-radius:12px;padding:14px 16px;font-size:16px;color:var(--stone-800);outline:none;letter-spacing:.15em" '+
+        'aria-label="Kode akses">'+
+      '<div class="gate-err" style="margin-top:8px">'+(gatePin.error?'<span>'+gatePin.error+'</span>':'')+'</div>'+
+      '<button type="submit" style="width:100%;margin-top:8px;border-radius:12px;padding:14px 16px;font-size:14px;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--orange-500),var(--rose-500));box-shadow:0 8px 20px rgba(249,115,22,.35)">Buka 🔓</button>'+
+    '</form>'+
     '<p class="gate-note">🔐 Kode akses hanya diminta <strong>sekali</strong> saat aplikasi pertama dibuka. Setelah benar, aplikasi terbuka langsung tanpa kode.</p>'+
   '</div></main>'+
   footerHTML()+
@@ -606,49 +596,50 @@ function accessGateHTML(){
 }
 
 function bindAccessGate(){
-  var pad = document.querySelector(".gate-pad");
-  if(!pad) return;
-  pad.addEventListener("click", function(e){
-    var btn = e.target.closest("[data-k]"); if(!btn) return;
-    var k = btn.getAttribute("data-k");
-    gatePress(k);
-  });
-  document.addEventListener("keydown", gateKeyHandler);
-}
-
-function gateKeyHandler(e){
-  if(state.accessUnlocked){ document.removeEventListener("keydown", gateKeyHandler); return; }
-  if(e.key>="0" && e.key<="9"){ gatePress(e.key); }
-  else if(e.key==="Backspace"){ gatePress("del"); }
-}
-
-function gatePress(k){
-  if(gatePin.error) gatePin.error = "";
-  if(k === "del"){
-    gatePin.pin = gatePin.pin.slice(0,-1);
-    render(); return;
+  var input = document.getElementById("gate-input");
+  var form = document.getElementById("gate-form");
+  if(input){
+    setTimeout(function(){ input.focus(); }, 0);
+    input.addEventListener("input", function(){
+      if(gatePin.error) gatePin.error = "";
+      gatePin.code = input.value;
+      // update hanya pesan error tanpa full re-render agar fokus input tetap
+      var errEl = document.querySelector(".gate-err");
+      if(errEl) errEl.innerHTML = "";
+    });
   }
-  if(gatePin.pin.length >= 6) return;
-  var next = gatePin.pin + k;
-  gatePin.pin = next;
-  if(next.length === 6){
-    setTimeout(function(){
-      if(next === DEVELOPER_PIN){
+  if(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var v = gatePin.code.trim();
+      if(!v){
+        gatePin.error = "Masukkan kode akses terlebih dahulu.";
+        gatePin.shake = true;
+        render();
+        setTimeout(function(){
+          gatePin.shake = false;
+          var inp = document.getElementById("gate-input");
+          if(inp) inp.focus();
+        }, 450);
+        return;
+      }
+      if(v === DEVELOPER_PIN){
         markActivated();
-        gatePin = { pin:"", error:"", shake:false };
+        gatePin = { code:"", error:"", shake:false };
         state.accessUnlocked = true;
-        document.removeEventListener("keydown", gateKeyHandler);
         render();
       } else {
         gatePin.error = "Kode akses salah. Coba lagi.";
         gatePin.shake = true;
-        gatePin.pin = "";
+        gatePin.code = "";
         render();
-        setTimeout(function(){ gatePin.shake = false; }, 450);
+        setTimeout(function(){
+          gatePin.shake = false;
+          var inp = document.getElementById("gate-input");
+          if(inp){ inp.focus(); }
+        }, 450);
       }
-    }, 180);
-  } else {
-    render();
+    });
   }
 }
 
@@ -1003,7 +994,7 @@ function bindDashboard(){
       state.accessUnlocked = false;
       state.data = emptyData();
       state.onbDraft = emptyData(); state.onbDraft.year = suggestYear(state.onbDraft.calendarType);
-      gatePin = { pin:"", error:"", shake:false };
+      gatePin = { code:"", error:"", shake:false };
       render();
     });
     document.getElementById("confirm-backdrop").addEventListener("click", function(e){ if(e.target.id==="confirm-backdrop"){ state.confirmReset=false; render(); } });
