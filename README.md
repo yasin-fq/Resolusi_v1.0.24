@@ -15,10 +15,10 @@ Catat capaian, harapan, dan langkah terukur di **5 area kehidupan**.
 
 ## 🔐 Kode Akses (PIN)
 
-Saat pertama dibuka, aplikasi meminta kode akses **6 digit** yang ditetapkan developer:
+Saat pertama dibuka, aplikasi meminta kode akses yang ditetapkan developer, jika perlu kode akses silahkan kujungi:
 
 ```
-PIN: 1 3 5 7 9 0
+https://lynk.id/qafstudio
 ```
 
 Kode ini hanya diminta **sekali** (saat aplikasi pertama dibuka). Setelah benar
