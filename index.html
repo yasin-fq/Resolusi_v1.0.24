@@ -25,6 +25,7 @@
       '<g fill="none" stroke="#fff" stroke-width="22"><circle cx="256" cy="256" r="130"/><circle cx="256" cy="256" r="78"/></g>' +
       '<circle cx="256" cy="256" r="26" fill="#fff"/></svg>';
     var iconSvg = "data:image/svg+xml," + encodeURIComponent(svg);
+    // Ikon PNG 180 (base64) untuk apple-touch-icon (iOS)
     var iconPng180 =
       "data:image/png;base64,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";
     var manifest = {
@@ -46,10 +47,12 @@
     mLink.rel = "manifest";
     mLink.href = "data:application/manifest+json," + encodeURIComponent(JSON.stringify(manifest));
     document.head.appendChild(mLink);
+    // apple-touch-icon (iOS) — PNG 180 base64 agar ikon Layar Utama tajam
     var aLink = document.createElement("link");
     aLink.rel = "apple-touch-icon";
     aLink.href = iconPng180;
     document.head.appendChild(aLink);
+    // favicon kecil
     var fLink = document.createElement("link");
     fLink.rel = "icon";
     fLink.type = "image/svg+xml";
@@ -59,6 +62,9 @@
 })();
 </script>
 <style>
+/* =========================================================================
+   RESET & DASAR
+   ========================================================================= */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg1:#fffbeb; --bg2:#fff7ed; --bg3:#fff1f2;
@@ -76,22 +82,33 @@
 html{ -webkit-text-size-adjust:100%; }
 body{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color:var(--stone-800); line-height:1.5;
+  color:var(--stone-800);
+  line-height:1.5;
   background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
-  background-attachment: fixed; min-height:100vh; -webkit-font-smoothing:antialiased;
+  background-attachment: fixed;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
 }
 button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
 input,textarea{ font-family:inherit; font-size:inherit; }
 textarea{ resize:vertical; }
 ::placeholder{ color:var(--stone-400); }
+img{max-width:100%}
+
+/* scrollbar */
 ::-webkit-scrollbar{ width:10px; height:10px; }
 ::-webkit-scrollbar-thumb{ background:var(--stone-300); border-radius:10px; border:2px solid transparent; background-clip:content-box; }
 ::-webkit-scrollbar-thumb:hover{ background:var(--stone-400); background-clip:content-box; }
 
+/* =========================================================================
+   LAYOUT
+   ========================================================================= */
 #app{ min-height:100vh; display:flex; flex-direction:column; }
 .wrap{ width:100%; max-width:1000px; margin:0 auto; padding:0 16px; }
 
-/* ONBOARDING */
+/* =========================================================================
+   ONBOARDING
+   ========================================================================= */
 .onb{ flex:1; display:flex; align-items:center; justify-content:center; padding:32px 16px; }
 .onb-card{
   width:100%; max-width:560px; background:rgba(255,255,255,.92);
@@ -127,6 +144,7 @@ textarea{ resize:vertical; }
 .inp.err{ border-color:#fda4af; box-shadow:0 0 0 3px rgba(251,113,133,.2); }
 .inp.big{ font-size:18px; font-weight:700; }
 .err-msg{ color:#e11d48; font-size:12px; margin-top:6px; }
+
 .cal-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
 .cal-btn{
   border:2px solid var(--stone-200); background:#fff; border-radius:12px;
@@ -138,6 +156,7 @@ textarea{ resize:vertical; }
 .cal-btn .nm{ font-size:13px; font-weight:600; color:var(--stone-600); margin-top:4px; display:block; }
 .cal-btn.active .nm{ color:#c2410c; }
 .cal-btn .hn{ font-size:10px; color:var(--stone-400); margin-top:2px; line-height:1.2; display:block; }
+
 .btn-primary{
   width:100%; border-radius:12px; padding:14px 20px; font-weight:700; font-size:15px;
   color:#fff; background:linear-gradient(90deg,var(--orange-500),var(--rose-500));
@@ -147,7 +166,9 @@ textarea{ resize:vertical; }
 .btn-primary:active{ transform:translateY(0); }
 .note{ text-align:center; font-size:12px; color:var(--stone-400); line-height:1.6; margin-top:14px; }
 
-/* HEADER */
+/* =========================================================================
+   HEADER
+   ========================================================================= */
 header.app-head{
   position:sticky; top:0; z-index:30;
   background:linear-gradient(90deg,#fbbf24,#fb923c,#fb7185);
@@ -164,6 +185,8 @@ header.app-head{
   transition:background .15s;
 }
 .icon-btn:hover{ background:rgba(255,255,255,.4); }
+
+/* menu dropdown */
 .menu-wrap{ position:relative; flex-shrink:0; }
 .menu{
   position:absolute; right:0; top:calc(100% + 8px); width:210px; background:#fff;
@@ -178,9 +201,13 @@ header.app-head{
 .menu hr{ border:none; border-top:1px solid var(--stone-100); margin:6px 0; }
 .menu-backdrop{ position:fixed; inset:0; z-index:40; }
 
-/* DASHBOARD */
+/* =========================================================================
+   DASHBOARD
+   ========================================================================= */
 main.app-main{ flex:1; padding:20px 0 28px; }
 main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
+
+/* progress card */
 .prog-card{ background:#fff; border:1px solid #ffe4d4; border-radius:18px; box-shadow:var(--shadow-sm); overflow:hidden; }
 .prog-inner{ background:linear-gradient(135deg,#fff7ed,#fffbeb,#fff1f2); padding:22px; }
 .prog-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; }
@@ -195,6 +222,8 @@ main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
 .bar-grad > div{ background:linear-gradient(90deg,#fb923c,#f43f5e); }
 .prog-note{ margin-top:12px; font-size:14px; color:var(--stone-500); }
 .prog-note.ok{ color:#059669; font-weight:600; display:flex; align-items:center; gap:6px; }
+
+/* quote */
 .quote{
   background:linear-gradient(90deg,#8b5cf6,#d946ef,#f43f5e);
   color:#fff; border-radius:18px; padding:16px 20px; box-shadow:0 6px 18px rgba(217,70,239,.25);
@@ -205,12 +234,17 @@ main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
 .quote-inner{ position:relative; display:flex; gap:12px; align-items:flex-start; }
 .quote .em{ font-size:28px; flex-shrink:0; }
 .quote p{ font-size:15px; font-weight:600; line-height:1.5; }
+
+/* section title */
 .sec-title{ display:flex; align-items:center; gap:8px; margin-bottom:12px; }
 .sec-title svg{ width:20px; height:20px; color:var(--orange-500); }
 .sec-title h2{ font-size:18px; font-weight:700; color:var(--stone-800); }
+
+/* category grid */
 .cat-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
 @media(min-width:640px){ .cat-grid{ grid-template-columns:repeat(2,1fr); } }
 @media(min-width:900px){ .cat-grid{ grid-template-columns:repeat(3,1fr); } }
+
 .cat-card{
   text-align:left; width:100%; border:2px solid; border-radius:18px; padding:20px;
   transition:transform .15s, box-shadow .15s; display:block;
@@ -226,26 +260,34 @@ main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
 .cat-prog{ margin-top:16px; }
 .cat-prog .lr{ display:flex; justify-content:space-between; font-size:12px; margin-bottom:6px; }
 .cat-empty{ margin-top:12px; font-size:12px; color:var(--stone-400); font-style:italic; }
+
+/* card colors */
 .c-rohani{ border-color:#a7f3d0; background:#ecfdf5; }
 .c-rohani .cat-badge{ background:linear-gradient(135deg,#34d399,#14b8a6); }
 .c-rohani .clr{ color:#047857; }
 .c-rohani .bar > div{ background:#10b981; }
+
 .c-finansial{ border-color:#fde68a; background:#fffbeb; }
 .c-finansial .cat-badge{ background:linear-gradient(135deg,#fbbf24,#eab308); }
 .c-finansial .clr{ color:#b45309; }
 .c-finansial .bar > div{ background:#f59e0b; }
+
 .c-fisik{ border-color:#fed7aa; background:#fff7ed; }
 .c-fisik .cat-badge{ background:linear-gradient(135deg,#fb923c,#ef4444); }
 .c-fisik .clr{ color:#c2410c; }
 .c-fisik .bar > div{ background:#f97316; }
+
 .c-pengembangan{ border-color:#f5d0fe; background:#fdf4ff; }
 .c-pengembangan .cat-badge{ background:linear-gradient(135deg,#e879f9,#a855f7); }
 .c-pengembangan .clr{ color:#a21caf; }
 .c-pengembangan .bar > div{ background:#d946ef; }
+
 .c-kebermanfaatan{ border-color:#fecdd3; background:#fff1f2; }
 .c-kebermanfaatan .cat-badge{ background:linear-gradient(135deg,#fb7185,#ec4899); }
 .c-kebermanfaatan .clr{ color:#be123c; }
 .c-kebermanfaatan .bar > div{ background:#f43f5e; }
+
+/* motivasi filler card */
 .filler{
   border:2px dashed #fed7aa; background:rgba(255,247,237,.5); border-radius:18px; padding:20px;
   display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
@@ -254,7 +296,9 @@ main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
 .filler .t{ font-size:14px; font-weight:700; color:var(--stone-700); }
 .filler .s{ font-size:12px; color:var(--stone-500); margin-top:4px; line-height:1.5; }
 
-/* MODAL */
+/* =========================================================================
+   MODAL
+   ========================================================================= */
 .modal-backdrop{
   position:fixed; inset:0; z-index:50; background:rgba(41,37,36,.45);
   backdrop-filter:blur(4px); display:flex; align-items:flex-end; justify-content:center;
@@ -270,6 +314,7 @@ main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
 @media(min-width:640px){ .modal{ border-radius:24px; max-height:88vh; animation:zoomIn .25s ease; } }
 @keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
 @keyframes zoomIn{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+
 .modal-head{ position:relative; padding:20px; color:#fff; display:flex; align-items:center; gap:12px; flex-shrink:0; }
 .modal-head::before{ content:""; position:absolute; inset:0; opacity:.15;
   background:radial-gradient(circle at 85% 15%, #fff 0 8%, transparent 9%), radial-gradient(circle at 15% 90%, #fff 0 6%, transparent 7%); }
@@ -278,10 +323,12 @@ main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
 .modal-head p{ position:relative; color:rgba(255,255,255,.88); font-size:13px; }
 .modal-close{ position:relative; flex-shrink:0; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.25); color:#fff; display:flex; align-items:center; justify-content:center; transition:background .15s; }
 .modal-close:hover{ background:rgba(255,255,255,.4); }
+
 .modal-prog{ flex-shrink:0; border-bottom:2px solid; padding:12px 20px; display:flex; align-items:center; gap:12px; }
 .modal-prog .lbl{ font-size:13px; font-weight:600; white-space:nowrap; }
 .modal-prog .bar{ flex:1; margin:0; height:8px; }
 .modal-prog .pct{ font-size:14px; font-weight:700; width:36px; text-align:right; }
+
 .modal-body{ flex:1; overflow-y:auto; padding:20px; }
 .modal-section{ margin-bottom:24px; }
 .modal-section:last-child{ margin-bottom:0; }
@@ -294,10 +341,14 @@ main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
   color:var(--stone-800); outline:none; transition:border-color .15s, box-shadow .15s; min-height:80px;
 }
 .ms-textarea:focus{ box-shadow:0 0 0 3px rgba(0,0,0,0); }
+
+/* step input row */
 .step-input{ display:flex; gap:8px; margin-bottom:12px; }
 .step-input .inp{ flex:1; }
 .step-add{ flex-shrink:0; border-radius:12px; padding:10px 14px; font-size:14px; font-weight:600; color:#fff; box-shadow:var(--shadow-sm); transition:opacity .15s; display:flex; align-items:center; gap:6px; }
 .step-add:disabled{ opacity:.4; cursor:not-allowed; }
+
+/* step list */
 .step-list{ display:flex; flex-direction:column; gap:8px; }
 .step-item{ display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--stone-100); border-radius:12px; padding:10px 12px; transition:border-color .15s, box-shadow .15s; }
 .step-item:hover{ border-color:var(--stone-200); box-shadow:var(--shadow-sm); }
@@ -312,16 +363,21 @@ main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
 .step-act:hover{ background:var(--stone-100); color:var(--stone-700); }
 .step-act.del:hover{ background:#fff1f2; color:#e11d48; }
 .step-edit-inp{ flex:1; border:2px solid; border-radius:10px; padding:8px 10px; font-size:14px; outline:none; }
+
+/* empty steps */
 .step-empty{ border:2px dashed; border-radius:12px; padding:24px; text-align:center; }
 .step-empty .em{ font-size:28px; }
 .step-empty .t{ font-size:14px; color:var(--stone-500); font-weight:600; margin-top:4px; }
 .step-empty .s{ font-size:12px; color:var(--stone-400); margin-top:2px; }
+
 .modal-foot{ flex-shrink:0; border-top:1px solid var(--stone-100); padding:12px 20px; background:var(--stone-50); display:flex; justify-content:space-between; align-items:center; }
 .modal-foot .sv{ font-size:12px; color:var(--stone-400); }
 .modal-done{ border-radius:12px; padding:8px 18px; font-size:14px; font-weight:600; color:#fff; box-shadow:var(--shadow-sm); transition:opacity .15s; }
 .modal-done:hover{ opacity:.9; }
 
-/* YEAR EDITOR */
+/* =========================================================================
+   YEAR EDITOR (inline panel)
+   ========================================================================= */
 .ye-card{ background:#fff; border:1px solid #ffe4d4; border-radius:18px; box-shadow:var(--shadow-sm); padding:20px; }
 .ye-title{ display:flex; align-items:center; gap:8px; color:var(--stone-700); margin-bottom:16px; }
 .ye-title svg{ width:16px; height:16px; color:var(--orange-500); }
@@ -338,7 +394,9 @@ main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
 .ye-actions .btn-save{ flex:1; border-radius:10px; padding:8px 16px; font-size:14px; font-weight:600; color:#fff; background:linear-gradient(90deg,var(--orange-500),var(--rose-500)); }
 .ye-actions .btn-save:disabled{ opacity:.4; cursor:not-allowed; }
 
-/* CONFIRM */
+/* =========================================================================
+   CONFIRM DIALOG
+   ========================================================================= */
 .confirm-backdrop{ position:fixed; inset:0; z-index:60; background:rgba(41,37,36,.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; padding:16px; animation:fadeIn .2s; }
 .confirm{ position:relative; width:100%; max-width:360px; background:#fff; border-radius:20px; box-shadow:var(--shadow-lg); padding:24px; text-align:center; animation:zoomIn .2s; }
 .confirm .em{ font-size:40px; }
@@ -350,13 +408,17 @@ main.app-main .wrap{ display:flex; flex-direction:column; gap:20px; }
 .confirm-actions .btn-danger{ flex:1; border-radius:12px; padding:10px 16px; font-size:14px; font-weight:600; color:#fff; background:#f43f5e; }
 .confirm-actions .btn-danger:hover{ background:#e11d48; }
 
-/* FOOTER */
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
 footer.app-foot{ margin-top:auto; border-top:1px solid #ffedd5; background:rgba(255,255,255,.7); backdrop-filter:blur(8px); }
 .foot-inner{ max-width:1000px; margin:0 auto; padding:18px 16px; text-align:center; }
 .foot-inner p{ font-size:14px; color:var(--stone-500); font-weight:500; }
 .foot-inner .sub{ font-size:12px; color:var(--stone-400); margin-top:4px; }
 
-/* INSTALL BANNER */
+/* =========================================================================
+   INSTALL BANNER
+   ========================================================================= */
 .install-banner{
   background:linear-gradient(90deg,#fef3c7,#fed7aa);
   border:1px solid #fcd34d; border-radius:14px; padding:14px 16px;
@@ -369,7 +431,9 @@ footer.app-foot{ margin-top:auto; border-top:1px solid #ffedd5; background:rgba(
 .install-banner button{ flex-shrink:0; border-radius:10px; padding:8px 14px; font-size:13px; font-weight:600; color:#fff; background:#d97706; }
 .install-banner button:hover{ background:#b45309; }
 
-/* UTIL / SVG */
+/* =========================================================================
+   UTIL / SVG
+   ========================================================================= */
 svg.ic{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
 .spin{ animation:spin 1s linear infinite; }
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -389,22 +453,14 @@ svg.ic{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2;
   box-shadow:0 8px 20px rgba(251,146,60,.4); margin-bottom:12px; font-size:30px; }
 .gate-head h1{ font-size:20px; font-weight:800; color:var(--stone-800); }
 .gate-head p{ font-size:14px; color:var(--stone-500); margin-top:4px; }
-.gate-dots{ display:flex; align-items:center; justify-content:center; gap:14px; margin:28px 0; }
-.gate-dot{ width:16px; height:16px; border-radius:50%; border:2px solid var(--stone-300); background:#fff; transition:all .15s; }
-.gate-dot.fill{ background:var(--orange-500); border-color:var(--orange-500); transform:scale(1.12); }
 .gate-err{ height:24px; display:flex; align-items:center; justify-content:center; }
 .gate-err span{ font-size:12px; font-weight:600; color:#f43f5e; }
-.gate-pad{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px; }
-.gate-key{ height:64px; border-radius:16px; background:var(--stone-50); border:1px solid var(--stone-200);
-  font-size:24px; font-weight:700; color:var(--stone-700); transition:all .12s;
-  display:flex; align-items:center; justify-content:center; }
-.gate-key:hover{ background:#fff7ed; border-color:#fdba74; transform:translateY(-2px); }
-.gate-key:active{ transform:translateY(0); }
-.gate-key.del{ color:var(--stone-500); }
-.gate-key.del:disabled{ opacity:.4; cursor:not-allowed; transform:none; }
-.gate-key.del:disabled:hover{ background:var(--stone-50); border-color:var(--stone-200); transform:none; }
+
+/* ACCESS GATE link */
 .gate-note{ text-align:center; font-size:12px; color:var(--stone-400); margin-top:22px; line-height:1.55; }
 .gate-note strong{ color:var(--stone-500); }
+.gate-access-link{ color:#f97316; font-weight:500; text-decoration:none; }
+.gate-access-link:hover{ text-decoration:underline; color:#ea580c; }
 </style>
 </head>
 <body>
@@ -419,14 +475,11 @@ var STORAGE_KEY = "resolusi-tb-data-v1";
 var ACCESS_KEY = "resolusi-activated-v1";
 
 // PIN 6 digit yang DITETAPKAN OLEH DEVELOPER. Pengguna hanya perlu
-// MEMASUKKAN pin ini sekali (saat aplikasi pertama dibuka) — tidak perlu
-// membuat/konfirmasi. Setelah benar, aplikasi ter-unlocked permanen.
-// Ubah nilai konstanta ini untuk mengganti PIN.
+// MEMASUKKAN pin ini sekali (saat aplikasi pertama dibuka). Setelah benar,
+// aplikasi ter-unlocked permanen. Input berupa teks (password) agar tidak
+// membocorkan format kode.
 var DEVELOPER_PIN = "135790";
 
-/* --- Kode akses (PIN 6 digit developer) ---
-   Layar kunci hanya muncul saat pertama dibuka. Pengguna memasukkan PIN
-   developer; jika benar → ditandai "activated" & tidak ditanyakan lagi. */
 function isActivated(){ try{ return localStorage.getItem(ACCESS_KEY) === "1"; }catch(e){ return false; } }
 function markActivated(){ try{ localStorage.setItem(ACCESS_KEY, "1"); }catch(e){} }
 function clearActivated(){ try{ localStorage.removeItem(ACCESS_KEY); }catch(e){} }
@@ -450,20 +503,154 @@ var CALENDAR_OPTS = [
   { value:"lainnya", label:"Lainnya", icon:"✨", hint:"Kalender kustom", suffix:"" }
 ];
 
-var QUOTES = [
-  "Tahun baru, semangat baru! Setiap hari adalah kesempatan untuk memulai. 🌅",
-  "Impian tanpa tindakan hanyalah angan-angan. Mulai langkah kecilmu hari ini. 🚀",
-  "Jadilah 1% lebih baik setiap hari — setahun dari sekarang, kamu tak akan mengenal dirimu. 💪",
-  "Disiplin adalah jembatan antara tujuan dan pencapaian. 🌉",
-  "Kesuksesan adalah jumlah dari upaya kecil yang diulang setiap hari. 🌟",
-  "Jangan tunggu motivasi. Bergeraklah, maka motivasi akan mengikutimu. ⚡",
-  "Versi terbaik dari dirimu menantimu di ujung konsistensi. 🌱"
-];
+/* =========================================================================
+   QUOTE KEYS (translated via I18N — see t('quote.N'))
+   ========================================================================= */
+var QUOTE_COUNT = 7;
+
+/* =========================================================================
+   I18N (Indonesian + English)
+   ========================================================================= */
+var LANG_KEY = "resolusi-lang-v1";
+
+function getLang(){ try{ var v = localStorage.getItem(LANG_KEY); return v === "en" ? "en" : "id"; }catch(e){ return "id"; } }
+function setLangStorage(lang){ try{ localStorage.setItem(LANG_KEY, lang); }catch(e){} }
+
+var I18N = {
+  // Access Gate
+  'gate.title': { id: "Masukkan Kode Akses", en: "Enter Access Code" },
+  'gate.subtitle': { id: "Masukkan kode akses untuk membuka aplikasi", en: "Enter access code to open the app" },
+  'gate.placeholder': { id: "Ketik kode akses di sini...", en: "Type access code here..." },
+  'gate.button': { id: "Buka 🔓", en: "Unlock 🔓" },
+  'gate.errorEmpty': { id: "Masukkan kode akses terlebih dahulu.", en: "Please enter the access code first." },
+  'gate.errorWrong': { id: "Kode akses salah. Coba lagi.", en: "Wrong access code. Try again." },
+  'gate.note': { id: "🔐 Kode akses hanya diminta sekali saat aplikasi pertama dibuka. Setelah benar, aplikasi terbuka langsung tanpa kode.", en: "🔐 Access code is only asked once when the app is first opened. After correct entry, the app opens directly without code." },
+  'gate.requestAccess': { id: "minta akses", en: "request access" },
+
+  // Onboarding
+  'onb.nameLabel': { id: "Siapa nama kamu?", en: "What's your name?" },
+  'onb.optional': { id: "(opsional)", en: "(optional)" },
+  'onb.namePlaceholder': { id: "Tulis namamu di sini...", en: "Type your name here..." },
+  'onb.calTypeLabel': { id: "Pilih jenis penanggalan", en: "Choose calendar type" },
+  'onb.customLabel': { id: "Nama penanggalan kustom", en: "Custom calendar name" },
+  'onb.customPlaceholder': { id: "cth: Tahun Saka, Tahun Imlek, dll.", en: "e.g. Saka Year, Lunar Year, etc." },
+  'onb.yearLabel': { id: "Tahun", en: "Year" },
+  'onb.start': { id: "Mulai Membuat Resolusi 🚀", en: "Start Making Resolutions 🚀" },
+  'onb.note': { id: "Data tersimpan otomatis di perangkatmu (localStorage).<br>Aplikasi ini bekerja sepenuhnya offline tanpa internet.", en: "Data is saved automatically on your device (localStorage).<br>This app works fully offline without internet." },
+  'onb.heroTitle': { id: "Resolusi Tahun Baru", en: "New Year Resolutions" },
+  'onb.heroSubtitle': { id: "Wujudkan versi terbaik dirimu, satu langkah terukur setiap hari", en: "Become the best version of yourself, one measurable step at a time" },
+
+  // Calendar options
+  'cal.masehi': { id: "Masehi", en: "Gregorian" },
+  'cal.hijriah': { id: "Hijriah", en: "Hijri" },
+  'cal.lainnya': { id: "Lainnya", en: "Custom" },
+  'cal.masehiHint': { id: "Kalender Gregorian", en: "Gregorian Calendar" },
+  'cal.hijriahHint': { id: "Kalender Islam", en: "Islamic Calendar" },
+  'cal.lainnyaHint': { id: "Kalender kustom", en: "Custom Calendar" },
+
+  // Categories
+  'cat.rohani.label': { id: "Rohani", en: "Spiritual" },
+  'cat.rohani.desc': { id: "Pertumbuhan spiritual, ibadah & ketenangan batin", en: "Spiritual growth, worship & inner peace" },
+  'cat.finansial.label': { id: "Finansial", en: "Financial" },
+  'cat.finansial.desc': { id: "Keuangan, tabungan & kemandirian ekonomi", en: "Finance, savings & economic independence" },
+  'cat.fisik.label': { id: "Fisik & Kebugaran", en: "Physical & Fitness" },
+  'cat.fisik.desc': { id: "Kesehatan tubuh, olahraga & energi harian", en: "Body health, exercise & daily energy" },
+  'cat.pengembangan.label': { id: "Pengembangan Diri", en: "Self-Development" },
+  'cat.pengembangan.desc': { id: "Soft skill & hard skill untuk tumbuh", en: "Soft skills & hard skills to grow" },
+  'cat.sosial.label': { id: "Sosial", en: "Social" },
+  'cat.sosial.desc': { id: "Kontribusi & dampak positif untuk sesama", en: "Contribution & positive impact for others" },
+
+  // Dashboard
+  'dash.progressLabel': { id: "Progres Keseluruhan", en: "Overall Progress" },
+  'dash.steps': { id: "langkah", en: "steps" },
+  'dash.areasTitle': { id: "5 Area Resolusi", en: "5 Resolution Areas" },
+  'dash.stepsDone': { id: "langkah selesai", en: "steps done" },
+  'dash.empty': { id: "Belum ada resolusi. Klik untuk mulai menulis ✍️", en: "No resolutions yet. Click to start writing ✍️" },
+  'dash.hasNotes': { id: "Sudah ada catatan. Tambahkan langkah terukur ya 💡", en: "Notes exist. Add measurable steps 💡" },
+  'dash.allDone': { id: "Luar biasa! Semua langkah selesai. Kamu luar biasa! 🎉", en: "Amazing! All steps completed. You are awesome! 🎉" },
+  'dash.startSteps': { id: "Mulai tambahkan langkah terukur di setiap kategori untuk melihat progresmu tumbuh 🌱", en: "Start adding measurable steps in each category to see your progress grow 🌱" },
+  'dash.keepGoing': { id: "langkah lagi menuju resolusi tercapai 💪", en: "steps left to achieve your resolutions 💪" },
+  'dash.menuDownload': { id: "Unduh Aplikasi Offline", en: "Download Offline App" },
+  'dash.menuExport': { id: "Ekspor Data", en: "Export Data" },
+  'dash.menuImport': { id: "Impor Data", en: "Import Data" },
+  'dash.menuReset': { id: "Reset Semua", en: "Reset All" },
+  'dash.yearWord': { id: "Tahun", en: "Year" },
+  'dash.fillerTitle': { id: "Seimbanglah tumbuh", en: "Grow balanced" },
+  'dash.fillerDesc': { id: "Lima area saling menguatkan. Jangan fokus pada satu saja ya!", en: "Five areas strengthen each other. Don't focus on just one!" },
+
+  // Category Modal
+  'modal.achievements': { id: "Capaian Tahun Ini", en: "Achievements This Year" },
+  'modal.achievementsHint': { id: "Apa yang sudah kamu capai pada area ini tahun sebelumnya?", en: "What have you achieved in this area previously?" },
+  'modal.achievementsPlaceholder': { id: "Tulis capaianmu di sini... contoh: Rutin sholat tepat waktu, menabung 20% gaji, turun 3kg...", en: "Write your achievements here... e.g.: Regular prayer on time, save 20% of salary, lose 3kg..." },
+  'modal.hopes': { id: "Harapan Tahun Depan", en: "Expectations Next Year" },
+  'modal.hopesHint': { id: "Apa capaian yang kamu harapkan di tahun mendatang?", en: "What achievements do you hope for next year?" },
+  'modal.hopesPlaceholder': { id: "Tulis harapanmu di sini... contoh: Hafal 1 juz baru, punya dana darurat 6 bulan, lari 10km tanpa henti...", en: "Write your hopes here... e.g.: Memorize 1 new juz, have 6-month emergency fund, run 10km non-stop..." },
+  'modal.steps': { id: "Langkah-Langkah Terukur", en: "Measurable Steps" },
+  'modal.stepsHint': { id: "Pecah tujuan menjadi aksi kecil yang konkret & bisa diceklis.", en: "Break goals into small, concrete, checkable actions." },
+  'modal.stepPlaceholder': { id: "cth: Olahraga 30 menit, 3x seminggu", en: "e.g.: Exercise 30 mins, 3x a week" },
+  'modal.add': { id: "Tambah", en: "Add" },
+  'modal.done': { id: "Selesai", en: "Done" },
+  'modal.saved': { id: "💾 Tersimpan otomatis", en: "💾 Auto-saved" },
+  'modal.stepsEmpty': { id: "Belum ada langkah terukur", en: "No measurable steps yet" },
+  'modal.stepsEmptyHint': { id: "Mulai tambahkan aksi kecil pertamamu di atas", en: "Start adding your first small action above" },
+  'modal.of': { id: "dari", en: "of" },
+  'modal.stepsComplete': { id: "langkah selesai", en: "steps done" },
+
+  // Year Editor
+  'ye.title': { id: "Ubah Pengaturan Tahun", en: "Change Year Settings" },
+  'ye.name': { id: "Nama", en: "Name" },
+  'ye.namePlaceholder': { id: "Nama kamu (opsional)", en: "Your name (optional)" },
+  'ye.calType': { id: "Jenis penanggalan", en: "Calendar type" },
+  'ye.customName': { id: "Nama penanggalan kustom", en: "Custom calendar name" },
+  'ye.customPlaceholder': { id: "cth: Tahun Saka", en: "e.g.: Saka Year" },
+  'ye.year': { id: "Tahun", en: "Year" },
+  'ye.cancel': { id: "Batal", en: "Cancel" },
+  'ye.save': { id: "Simpan", en: "Save" },
+
+  // Confirm Reset
+  'reset.title': { id: "Reset Semua Data?", en: "Reset All Data?" },
+  'reset.desc': { id: "Semua resolusi, capaian, dan langkah yang sudah kamu buat akan dihapus permanen. Tindakan ini tidak bisa dibatalkan.", en: "All resolutions, achievements, and steps you have created will be permanently deleted. This action cannot be undone." },
+  'reset.cancel': { id: "Batal", en: "Cancel" },
+  'reset.confirm': { id: "Ya, Reset", en: "Yes, Reset" },
+
+  // Install Guide
+  'install.title': { id: "Pasang di Layar Utama", en: "Install on Home Screen" },
+  'install.androidTitle': { id: "🤖 Android", en: "🤖 Android" },
+  'install.androidDesc': { id: "Buka aplikasi di <strong>Chrome</strong> → tap menu <strong>⋮</strong> → <strong>\"Tambahkan ke Layar Utama\"</strong> / \"Install app\". Ikon muncul di layar HP seperti aplikasi biasa.", en: "Open app in <strong>Chrome</strong> → tap menu <strong>⋮</strong> → <strong>\"Add to Home Screen\"</strong> / \"Install app\". Icon appears on phone screen like a regular app." },
+  'install.iphoneTitle': { id: "🍎 iPhone / iPad", en: "🍎 iPhone / iPad" },
+  'install.iphoneDesc': { id: "Buka aplikasi di <strong>Safari</strong> → tap tombol <strong>Bagikan □↑</strong> → <strong>\"Tambah ke Layar Utama\"</strong>. Buka dari ikon di layar — bekerja offline penuh.", en: "Open app in <strong>Safari</strong> → tap <strong>Share button □↑</strong> → <strong>\"Add to Home Screen\"</strong>. Open from icon on screen — works fully offline." },
+  'install.computerTitle': { id: "💻 Komputer", en: "💻 Computer" },
+  'install.computerDesc': { id: "Buka aplikasi di <strong>Chrome/Edge</strong> → klik ikon <strong>Install</strong> di address bar (ikon ⊕ atau +) → jadi aplikasi desktop dengan ikon sendiri.", en: "Open app in <strong>Chrome/Edge</strong> → click <strong>Install</strong> icon in address bar → becomes desktop app with its own icon." },
+  'install.tip': { id: "💡 Setelah terpasang, aplikasi bisa dibuka tanpa internet. Data tersimpan otomatis di perangkat.", en: "💡 Once installed, the app can be opened without internet. Data is saved automatically on device." },
+  'install.close': { id: "Mengerti", en: "Got it" },
+
+  // Footer
+  'footer.copyright': { id: "© 2026 Resolusi 1.0.24 (Beta) | Hak Cipta Dilindungi", en: "© 2026 Resolusi 1.0.24 (Beta) | All Rights Reserved" },
+  'footer.note': { id: "Data tersimpan aman di perangkatmu.", en: "Data is safely stored on your device." },
+
+  // Loading
+  'loading': { id: "Memuat...", en: "Loading..." },
+
+  // Quotes
+  'quote.0': { id: "Tahun baru, semangat baru! Setiap hari adalah kesempatan untuk memulai. 🌅", en: "New year, new spirit! Every day is an opportunity to start. 🌅" },
+  'quote.1': { id: "Impian tanpa tindakan hanyalah angan-angan. Mulai langkah kecilmu hari ini. 🚀", en: "Dreams without action are just wishes. Start your small step today. 🚀" },
+  'quote.2': { id: "Jadilah 1% lebih baik setiap hari — setahun dari sekarang, kamu tak akan mengenal dirimu. 💪", en: "Be 1% better every day — a year from now, you won't recognize yourself. 💪" },
+  'quote.3': { id: "Disiplin adalah jembatan antara tujuan dan pencapaian. 🌉", en: "Discipline is the bridge between goals and accomplishment. 🌉" },
+  'quote.4': { id: "Kesuksesan adalah jumlah dari upaya kecil yang diulang setiap hari. 🌟", en: "Success is the sum of small efforts repeated daily. 🌟" },
+  'quote.5': { id: "Jangan tunggu motivasi. Bergeraklah, maka motivasi akan mengikutimu. ⚡", en: "Don't wait for motivation. Move, and motivation will follow. ⚡" },
+  'quote.6': { id: "Versi terbaik dari dirimu menantimu di ujung konsistensi. 🌱", en: "The best version of yourself awaits at the end of consistency. 🌱" }
+};
+
+function t(key){
+  var entry = I18N[key];
+  if(!entry) return key;
+  return state.lang === "en" ? entry.en : entry.id;
+}
 
 /* =========================================================================
    STATE
    ========================================================================= */
-var state = { data:null, onbDraft:null, accessUnlocked:false, view:"loading", activeCat:null, showMenu:false, editingYear:false, confirmReset:false, quoteIdx:0, editingStepId:null };
+var state = { data:null, onbDraft:null, accessUnlocked:false, lang:"id", view:"loading", activeCat:null, showMenu:false, editingYear:false, confirmReset:false, quoteIdx:0, editingStepId:null };
 
 function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,8); }
 
@@ -549,12 +736,29 @@ function svg(name, cls){
 }
 
 /* =========================================================================
+   LANGUAGE TOGGLE
+   ========================================================================= */
+function langToggleHTML(){
+  return '<button type="button" id="btn-lang" style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f97316,#f43f5e);color:#fff;font-size:11px;font-weight:700;box-shadow:0 4px 12px rgba(249,115,22,.4);display:flex;align-items:center;justify-content:center;transition:opacity .15s" onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1" aria-label="Switch language" title="'+(state.lang==='id'?'Switch to English':'Ganti ke Indonesia')+'">'+(state.lang==='id'?'EN':'ID')+'</button>';
+}
+
+function bindLangToggle(){
+  var btnLang = document.getElementById("btn-lang");
+  if(btnLang){
+    btnLang.addEventListener("click", function(){
+      state.lang = state.lang === "id" ? "en" : "id";
+      setLangStorage(state.lang);
+      render();
+    });
+  }
+}
+
+/* =========================================================================
    RENDER ROOT
    ========================================================================= */
 function render(){
   var app = document.getElementById("app");
   if(state.view === "loading"){ app.innerHTML = loadingHTML(); return; }
-  // Gerbang kode akses: tampil HANYA saat pertama dibuka (belum ada kode).
   if(!state.accessUnlocked){ app.innerHTML = accessGateHTML(); bindAccessGate(); return; }
   if(!state.data || !state.data.year){
     if(!state.onbDraft){ state.onbDraft = emptyData(); state.onbDraft.year = suggestYear(state.onbDraft.calendarType); }
@@ -566,30 +770,33 @@ function render(){
 function loadingHTML(){
   return '<div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center">'+
     '<div style="font-size:48px;animation:bob 1.5s ease-in-out infinite">🎯</div>'+
-    '<p style="margin-top:12px;color:#a8a29e;font-size:14px;font-weight:500">Memuat...</p></div>';
+    '<p style="margin-top:12px;color:#a8a29e;font-size:14px;font-weight:500">'+esc(t('loading'))+'</p></div>';
 }
 
 /* =========================================================================
-   ACCESS GATE HTML & BINDING
+   ACCESS GATE (Kode Akses — text input password, hanya saat pertama dibuka)
    ========================================================================= */
 var gatePin = { code:"", error:"", shake:false };
 
 function accessGateHTML(){
-  return '<div class="gate"><main class="gate-main"><div class="gate-card'+(gatePin.shake?" shake":"")+'">'+
+  return '<div class="gate">'+
+    '<div style="position:absolute;top:16px;right:16px;z-index:10">'+langToggleHTML()+'</div>'+
+    '<main class="gate-main"><div class="gate-card'+(gatePin.shake?" shake":"")+'">'+
     '<div class="gate-head">'+
       '<div class="gate-lock">🔒</div>'+
-      '<h1>Masukkan Kode Akses</h1>'+
-      '<p>Masukkan kode akses untuk membuka aplikasi <a href="https://lynk.id/qafstudio">minta akses</a></p>'+
+      '<h1>'+t('gate.title')+'</h1>'+
+      '<p>'+t('gate.subtitle')+'</p>'+
     '</div>'+
     '<form id="gate-form" style="margin-top:28px">'+
       '<input id="gate-input" type="password" inputmode="text" autocomplete="off" '+
-        'value="'+esc(gatePin.code)+'" placeholder="Ketik kode akses di sini..." '+
+        'value="'+esc(gatePin.code)+'" placeholder="'+esc(t('gate.placeholder'))+'" '+
         'style="width:100%;border:2px solid var(--stone-200);background:var(--stone-50);border-radius:12px;padding:14px 16px;font-size:16px;color:var(--stone-800);outline:none;letter-spacing:.15em" '+
-        'aria-label="Kode akses">'+
+        'aria-label="'+esc(t('gate.title'))+'">'+
       '<div class="gate-err" style="margin-top:8px">'+(gatePin.error?'<span>'+gatePin.error+'</span>':'')+'</div>'+
-      '<button type="submit" style="width:100%;margin-top:8px;border-radius:12px;padding:14px 16px;font-size:14px;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--orange-500),var(--rose-500));box-shadow:0 8px 20px rgba(249,115,22,.35)">Buka 🔓</button>'+
+      '<button type="submit" style="width:100%;margin-top:8px;border-radius:12px;padding:14px 16px;font-size:14px;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--orange-500),var(--rose-500));box-shadow:0 8px 20px rgba(249,115,22,.35)">'+t('gate.button')+'</button>'+
     '</form>'+
-    '<p class="gate-note">🔐 Kode akses hanya diminta <strong>sekali</strong> saat aplikasi pertama dibuka. Setelah benar, aplikasi terbuka langsung tanpa kode.</p>'+
+    '<p class="gate-note">'+t('gate.note')+'</p>'+
+    '<p style="text-align:center;font-size:12px;margin-top:12px"><a href="https://lynk.id/qafstudio" target="_blank" rel="noopener noreferrer" class="gate-access-link">'+t('gate.requestAccess')+' →</a></p>'+
   '</div></main>'+
   footerHTML()+
   '</div>';
@@ -598,12 +805,12 @@ function accessGateHTML(){
 function bindAccessGate(){
   var input = document.getElementById("gate-input");
   var form = document.getElementById("gate-form");
+  bindLangToggle();
   if(input){
     setTimeout(function(){ input.focus(); }, 0);
     input.addEventListener("input", function(){
       if(gatePin.error) gatePin.error = "";
       gatePin.code = input.value;
-      // update hanya pesan error tanpa full re-render agar fokus input tetap
       var errEl = document.querySelector(".gate-err");
       if(errEl) errEl.innerHTML = "";
     });
@@ -613,14 +820,10 @@ function bindAccessGate(){
       e.preventDefault();
       var v = gatePin.code.trim();
       if(!v){
-        gatePin.error = "Masukkan kode akses terlebih dahulu.";
+        gatePin.error = t('gate.errorEmpty');
         gatePin.shake = true;
         render();
-        setTimeout(function(){
-          gatePin.shake = false;
-          var inp = document.getElementById("gate-input");
-          if(inp) inp.focus();
-        }, 450);
+        setTimeout(function(){ gatePin.shake = false; var inp = document.getElementById("gate-input"); if(inp) inp.focus(); }, 450);
         return;
       }
       if(v === DEVELOPER_PIN){
@@ -629,15 +832,11 @@ function bindAccessGate(){
         state.accessUnlocked = true;
         render();
       } else {
-        gatePin.error = "Kode akses salah. Coba lagi.";
+        gatePin.error = t('gate.errorWrong');
         gatePin.shake = true;
         gatePin.code = "";
         render();
-        setTimeout(function(){
-          gatePin.shake = false;
-          var inp = document.getElementById("gate-input");
-          if(inp){ inp.focus(); }
-        }, 450);
+        setTimeout(function(){ gatePin.shake = false; var inp = document.getElementById("gate-input"); if(inp) inp.focus(); }, 450);
       }
     });
   }
@@ -650,40 +849,42 @@ function onboardingHTML(d){
   if(!d){ d = state.onbDraft || emptyData(); }
   var yr = d.year || suggestYear(d.calendarType);
   var calName = d.calendarType === "lainnya" ? d.customCalendarName : "";
-  return '<div class="onb"><div class="onb-card">'+
+  return '<div class="onb">'+
+    '<div style="position:fixed;top:14px;right:14px;z-index:40">'+langToggleHTML()+'</div>'+
+    '<div class="onb-card">'+
     '<div class="onb-hero">'+
       '<div class="onb-emoji">🎯</div>'+
-      '<h1>Resolusi Tahun Baru</h1>'+
-      '<p>Wujudkan versi terbaik dirimu, satu langkah terukur setiap hari</p>'+
+      '<h1>'+esc(t('onb.heroTitle'))+'</h1>'+
+      '<p>'+esc(t('onb.heroSubtitle'))+'</p>'+
     '</div>'+
     '<div class="onb-body"><div class="onb-form">'+
       '<div class="field">'+
-        '<label>Siapa nama kamu? <span class="opt">(opsional)</span></label>'+
-        '<input id="ob-name" class="inp" type="text" placeholder="Tulis namamu di sini..." value="'+esc(d.name)+'">'+
+        '<label>'+esc(t('onb.nameLabel'))+' <span class="opt">'+esc(t('onb.optional'))+'</span></label>'+
+        '<input id="ob-name" class="inp" type="text" placeholder="'+esc(t('onb.namePlaceholder'))+'" value="'+esc(d.name)+'">'+
       '</div>'+
       '<div class="field">'+
-        '<label>Pilih jenis penanggalan</label>'+
+        '<label>'+esc(t('onb.calTypeLabel'))+'</label>'+
         '<div class="cal-grid" id="ob-cal">'+
           CALENDAR_OPTS.map(function(o){
             var active = d.calendarType === o.value ? " active" : "";
             return '<button type="button" data-cal="'+o.value+'" class="cal-btn'+active+'">'+
               '<span class="ic">'+o.icon+'</span>'+
-              '<span class="nm">'+o.label+'</span>'+
-              '<span class="hn">'+o.hint+'</span></button>';
+              '<span class="nm">'+esc(t('cal.'+o.value))+'</span>'+
+              '<span class="hn">'+esc(t('cal.'+o.value+'Hint'))+'</span></button>';
           }).join("")+
         '</div>'+
       '</div>'+
       (d.calendarType === "lainnya" ?
         '<div class="field" id="ob-custom-wrap">'+
-          '<label>Nama penanggalan kustom</label>'+
-          '<input id="ob-custom" class="inp" type="text" placeholder="cth: Tahun Saka, Tahun Imlek, dll." value="'+esc(calName)+'">'+
+          '<label>'+esc(t('onb.customLabel'))+'</label>'+
+          '<input id="ob-custom" class="inp" type="text" placeholder="'+esc(t('onb.customPlaceholder'))+'" value="'+esc(calName)+'">'+
         '</div>' : '')+
       '<div class="field">'+
-        '<label>Tahun <span class="opt">('+suffixFor(d.calendarType)+')</span></label>'+
+        '<label>'+esc(t('onb.yearLabel'))+' <span class="opt">('+suffixFor(d.calendarType)+')</span></label>'+
         '<input id="ob-year" class="inp big" type="text" inputmode="numeric" placeholder="'+yearPlaceholder(d.calendarType)+'" value="'+esc(yr)+'">'+
       '</div>'+
-      '<button type="button" id="ob-start" class="btn-primary">Mulai Membuat Resolusi 🚀</button>'+
-      '<p class="note">Data tersimpan otomatis di perangkatmu (localStorage).<br>Aplikasi ini bekerja sepenuhnya offline tanpa internet.</p>'+
+      '<button type="button" id="ob-start" class="btn-primary">'+esc(t('onb.start'))+'</button>'+
+      '<p class="note">'+t('onb.note')+'</p>'+
     '</div></div>'+
   '</div></div>'+
   footerHTML();
@@ -691,12 +892,14 @@ function onboardingHTML(d){
 
 function suffixFor(type){ return type==="hijriah"?"H":type==="masehi"?"M":""; }
 function yearPlaceholder(type){
-  if(type==="masehi") return "cth: 2026";
-  if(type==="hijriah") return "cth: 1447";
-  return "cth: 1";
+  var cth = state.lang === "en" ? "e.g." : "cth";
+  if(type==="masehi") return cth+": 2026";
+  if(type==="hijriah") return cth+": 1447";
+  return cth+": 1";
 }
 
 function bindOnboarding(){
+  bindLangToggle();
   var nameEl = document.getElementById("ob-name");
   var calWrap = document.getElementById("ob-cal");
   var yearEl = document.getElementById("ob-year");
@@ -714,6 +917,7 @@ function bindOnboarding(){
     render();
   });
 
+  // custom input
   var customEl = document.getElementById("ob-custom");
   if(customEl){ customEl.addEventListener("input", function(){ d.customCalendarName = customEl.value; }); }
 
@@ -746,18 +950,19 @@ function dashboardHTML(){
   html += '<header class="app-head"><div class="head-inner">'+
     '<div class="head-ic">🎯</div>'+
     '<div class="head-titles">'+
-      '<h1>'+(d.name ? "Resolusi "+esc(d.name) : "Resolusi Tahun Baru")+'</h1>'+
-      '<p>Tahun '+esc(d.year)+(sfx?" "+sfx:"")+'</p>'+
+      '<h1>'+(d.name ? esc((state.lang==='en'?'Resolutions ':'Resolusi ')+d.name) : esc(t('onb.heroTitle')))+'</h1>'+
+      '<p>'+esc(t('dash.yearWord'))+' '+esc(d.year)+(sfx?" "+sfx:"")+'</p>'+
     '</div>'+
-    '<button class="icon-btn" id="btn-edit-year" title="Ubah pengaturan tahun" aria-label="Ubah tahun">'+svg("edit")+'</button>'+
+    '<button class="icon-btn" id="btn-edit-year" title="'+esc(t('ye.title'))+'" aria-label="'+esc(t('ye.title'))+'">'+svg("edit")+'</button>'+
+    langToggleHTML()+
     '<div class="menu-wrap">'+
-      '<button class="icon-btn" id="btn-menu" aria-label="Menu lainnya">'+svg("dots")+'</button>'+
+      '<button class="icon-btn" id="btn-menu" aria-label="'+(state.lang==='en'?'More menu':'Menu lainnya')+'">'+svg("dots")+'</button>'+
       (state.showMenu ?
         '<div class="menu-backdrop" id="menu-backdrop"></div><div class="menu" id="menu">'+
-          '<button id="m-export">'+svg("download")+' Ekspor Data</button>'+
-          '<button id="m-import">'+svg("upload")+' Impor Data</button>'+
+          '<button id="m-export">'+svg("download")+' '+esc(t('dash.menuExport'))+'</button>'+
+          '<button id="m-import">'+svg("upload")+' '+esc(t('dash.menuImport'))+'</button>'+
           '<hr>'+
-          '<button class="danger" id="m-reset">'+svg("reset")+' Reset Semua</button>'+
+          '<button class="danger" id="m-reset">'+svg("reset")+' '+esc(t('dash.menuReset'))+'</button>'+
         '</div>' : '')+
     '</div>'+
     '<input type="file" id="import-file" accept="application/json,.json" style="display:none">'+
@@ -768,87 +973,97 @@ function dashboardHTML(){
   // Year editor
   if(state.editingYear){ html += yearEditorHTML(d); }
 
-  // Install banner
+  // Install banner (only if standalone file opened via file:// or first visit)
   html += installBannerHTML();
 
   // Progress card
   html += '<section class="prog-card"><div class="prog-inner">'+
     '<div class="prog-top">'+
-      '<div><div class="prog-label">Progres Keseluruhan</div>'+
-        '<div class="prog-big">'+ov.done+'<span class="tot">/'+ov.total+'</span> <span class="lbl">langkah</span></div></div>'+
+      '<div><div class="prog-label">'+esc(t('dash.progressLabel'))+'</div>'+
+        '<div class="prog-big">'+ov.done+'<span class="tot">/'+ov.total+'</span> <span class="lbl">'+esc(t('dash.steps'))+'</span></div></div>'+
       '<div class="prog-pct">'+ov.pct+'%</div>'+
     '</div>'+
     '<div class="bar big bar-grad"><div style="width:'+ov.pct+'%"></div></div>'+
-    (allDone ? '<p class="prog-note ok">'+svg("check")+' Luar biasa! Semua langkah selesai. Kamu luar biasa! 🎉</p>' :
-     ov.total===0 ? '<p class="prog-note">Mulai tambahkan langkah terukur di setiap kategori untuk melihat progresmu tumbuh 🌱</p>' :
-     '<p class="prog-note">Teruslah melangkah! '+(ov.total-ov.done)+' langkah lagi menuju resolusi tercapai 💪</p>')+
+    (allDone ? '<p class="prog-note ok">'+svg("check")+' '+esc(t('dash.allDone'))+'</p>' :
+     ov.total===0 ? '<p class="prog-note">'+esc(t('dash.startSteps'))+'</p>' :
+     '<p class="prog-note">'+(state.lang==='en'?'Keep going! ':'Teruslah melangkah! ')+(ov.total-ov.done)+' '+esc(t('dash.keepGoing'))+'</p>')+
   '</div></section>';
 
   // Quote
   html += '<section class="quote"><div class="quote-inner">'+
     '<div class="em">💬</div>'+
-    '<p>'+esc(QUOTES[state.quoteIdx])+'</p>'+
+    '<p>'+esc(t('quote.'+state.quoteIdx))+'</p>'+
   '</div></section>';
 
   // Categories
-  html += '<section><div class="sec-title">'+svg("target")+'<h2>5 Area Resolusi</h2></div>';
+  html += '<section><div class="sec-title">'+svg("target")+'<h2>'+esc(t('dash.areasTitle'))+'</h2></div>';
   html += '<div class="cat-grid">';
   CATEGORIES.forEach(function(c){
     var cat = d.categories[c.id];
     var p = catProgress(cat);
     var hasContent = cat.achievements.trim() || cat.hopes.trim() || p.total > 0;
+    var catLabelKey = c.id === 'kebermanfaatan' ? 'cat.sosial.label' : ('cat.'+c.id+'.label');
+    var catDescKey = c.id === 'kebermanfaatan' ? 'cat.sosial.desc' : ('cat.'+c.id+'.desc');
     html += '<button class="cat-card '+c.cls+'" data-cat="'+c.id+'">'+
       '<div class="cat-head">'+
         '<div class="cat-badge">'+c.icon+'</div>'+
-        '<div class="cat-info"><h3>'+c.label+'</h3><p>'+c.desc+'</p></div>'+
+        '<div class="cat-info"><h3>'+esc(t(catLabelKey))+'</h3><p>'+esc(t(catDescKey))+'</p></div>'+
         '<span class="cat-chev">'+svg("chevron")+'</span>'+
       '</div>'+
       '<div class="cat-prog">'+
-        '<div class="lr"><span class="clr" style="color:'+c.text+';font-weight:600">'+p.done+'/'+p.total+' langkah selesai</span><span style="color:#a8a29e;font-weight:500">'+p.pct+'%</span></div>'+
+        '<div class="lr"><span class="clr" style="color:'+c.text+';font-weight:600">'+p.done+'/'+p.total+' '+esc(t('dash.stepsDone'))+'</span><span style="color:#a8a29e;font-weight:500">'+p.pct+'%</span></div>'+
         '<div class="bar"><div style="width:'+p.pct+'%;background:'+c.bar+'"></div></div>'+
       '</div>'+
-      (!hasContent ? '<p class="cat-empty">Belum ada resolusi. Klik untuk mulai menulis ✍️</p>' :
-       p.total===0 ? '<p class="cat-empty" style="font-style:normal;color:#78716c">Sudah ada catatan. Tambahkan langkah terukur ya 💡</p>' : '')+
+      (!hasContent ? '<p class="cat-empty">'+esc(t('dash.empty'))+'</p>' :
+       p.total===0 ? '<p class="cat-empty" style="font-style:normal;color:#78716c">'+esc(t('dash.hasNotes'))+'</p>' : '')+
     '</button>';
   });
-  html += '<div class="filler"><div class="em">🌈</div><div class="t">Seimbanglah tumbuh</div><div class="s">Lima area saling menguatkan. Jangan fokus pada satu saja ya!</div></div>';
+  // filler
+  html += '<div class="filler"><div class="em">🌈</div><div class="t">'+esc(t('dash.fillerTitle'))+'</div><div class="s">'+esc(t('dash.fillerDesc'))+'</div></div>';
   html += '</div></section>';
 
   html += '</div></main>';
   html += footerHTML();
   html += '</div>';
 
+  // Modal kategori
   if(state.activeCat){ html += categoryModalHTML(state.activeCat); }
+  // Confirm reset
   if(state.confirmReset){ html += confirmResetHTML(); }
 
   return html;
 }
 
 function installBannerHTML(){
+  // Tampilkan banner panduan instalasi (bisa di-tutup, preferensi disimpan)
   if(localStorage.getItem("resolusi-install-dismissed") === "1") return "";
+  var en = state.lang === "en";
+  var title = en ? "Install on Phone / Computer" : "Pasang di HP / Komputer";
+  var desc = en ? "Open this file then \"Add to Home Screen\" to use like an app" : "Buka file ini lalu \"Tambahkan ke Layar Utama\" untuk pakai seperti aplikasi";
+  var btn = en ? "How to Install" : "Cara Pasang";
   return '<div class="install-banner" style="margin-bottom:0">'+
     '<div class="em">📲</div>'+
-    '<div class="tx"><strong>Pasang di HP / Komputer</strong><span>Buka file ini lalu "Tambahkan ke Layar Utama" untuk pakai seperti aplikasi</span></div>'+
-    '<button id="install-how">Cara Pasang</button>'+
+    '<div class="tx"><strong>'+esc(title)+'</strong><span>'+esc(desc)+'</span></div>'+
+    '<button id="install-how">'+esc(btn)+'</button>'+
     '<button id="install-dismiss" style="background:#fff3cd;color:#92400e;border:1px solid #fcd34d">✕</button>'+
   '</div>';
 }
 
 function yearEditorHTML(d){
   return '<div class="ye-card" style="margin-bottom:20px">'+
-    '<div class="ye-title">'+svg("edit")+'<h3>Ubah Pengaturan Tahun</h3></div>'+
-    '<div class="ye-row"><label>Nama</label><input id="ye-name" class="inp" type="text" placeholder="Nama kamu (opsional)" value="'+esc(d.name)+'"></div>'+
-    '<div class="ye-row"><label>Jenis penanggalan</label><div class="ye-cal" id="ye-cal">'+
+    '<div class="ye-title">'+svg("edit")+'<h3>'+esc(t('ye.title'))+'</h3></div>'+
+    '<div class="ye-row"><label>'+esc(t('ye.name'))+'</label><input id="ye-name" class="inp" type="text" placeholder="'+esc(t('ye.namePlaceholder'))+'" value="'+esc(d.name)+'"></div>'+
+    '<div class="ye-row"><label>'+esc(t('ye.calType'))+'</label><div class="ye-cal" id="ye-cal">'+
       CALENDAR_OPTS.map(function(o){
         var active = d.calendarType===o.value?" active":"";
-        return '<button type="button" data-cal="'+o.value+'" class="'+active+'"><span class="ic">'+o.icon+'</span>'+o.label+'</button>';
+        return '<button type="button" data-cal="'+o.value+'" class="'+active+'"><span class="ic">'+o.icon+'</span>'+esc(t('cal.'+o.value))+'</button>';
       }).join("")+
     '</div></div>'+
-    (d.calendarType==="lainnya" ? '<div class="ye-row"><label>Nama penanggalan kustom</label><input id="ye-custom" class="inp" type="text" placeholder="cth: Tahun Saka" value="'+esc(d.customCalendarName)+'"></div>' : '')+
-    '<div class="ye-row"><label>Tahun</label><input id="ye-year" class="inp" type="text" inputmode="numeric" value="'+esc(d.year)+'"></div>'+
+    (d.calendarType==="lainnya" ? '<div class="ye-row"><label>'+esc(t('ye.customName'))+'</label><input id="ye-custom" class="inp" type="text" placeholder="'+esc(t('ye.customPlaceholder'))+'" value="'+esc(d.customCalendarName)+'"></div>' : '')+
+    '<div class="ye-row"><label>'+esc(t('ye.year'))+'</label><input id="ye-year" class="inp" type="text" inputmode="numeric" value="'+esc(d.year)+'"></div>'+
     '<div class="ye-actions">'+
-      '<button class="btn-ghost" id="ye-cancel">Batal</button>'+
-      '<button class="btn-save" id="ye-save">Simpan</button>'+
+      '<button class="btn-ghost" id="ye-cancel">'+esc(t('ye.cancel'))+'</button>'+
+      '<button class="btn-save" id="ye-save">'+esc(t('ye.save'))+'</button>'+
     '</div>'+
   '</div>';
 }
@@ -857,71 +1072,82 @@ function categoryModalHTML(catId){
   var c = CATEGORIES.filter(function(x){return x.id===catId;})[0];
   var cat = state.data.categories[catId];
   var p = catProgress(cat);
+  var catLabelKey = c.id === 'kebermanfaatan' ? 'cat.sosial.label' : ('cat.'+c.id+'.label');
+  var catDescKey = c.id === 'kebermanfaatan' ? 'cat.sosial.desc' : ('cat.'+c.id+'.desc');
+  var catLabel = t(catLabelKey);
+  var catDesc = t(catDescKey);
+  var closeLabel = state.lang === 'en' ? 'Close' : 'Tutup';
   return '<div class="modal-backdrop" id="modal-backdrop">'+
-    '<div class="modal" role="dialog" aria-modal="true" aria-label="Resolusi '+c.label+'">'+
+    '<div class="modal" role="dialog" aria-modal="true" aria-label="'+esc(t('onb.heroTitle')+' '+catLabel)+'">'+
       '<div class="modal-head" style="background:'+c.grad+'">'+
         '<div class="modal-badge">'+c.icon+'</div>'+
-        '<div style="flex:1;min-width:0"><h2>'+c.label+'</h2><p>'+c.desc+'</p></div>'+
-        '<button class="modal-close" id="modal-close" aria-label="Tutup">'+svg("close")+'</button>'+
+        '<div style="flex:1;min-width:0"><h2>'+esc(catLabel)+'</h2><p>'+esc(catDesc)+'</p></div>'+
+        '<button class="modal-close" id="modal-close" aria-label="'+esc(closeLabel)+'">'+svg("close")+'</button>'+
       '</div>'+
       '<div class="modal-prog" style="background:'+c.soft+';border-color:'+c.border+'">'+
         svg("target", "clr")+
-        '<span class="lbl" style="color:'+c.text+'">'+p.done+' dari '+p.total+' langkah selesai</span>'+
+        '<span class="lbl" style="color:'+c.text+'">'+p.done+' '+esc(t('modal.of'))+' '+p.total+' '+esc(t('modal.stepsComplete'))+'</span>'+
         '<div class="bar"><div style="width:'+p.pct+'%;background:'+c.bar+'"></div></div>'+
         '<span class="pct" style="color:'+c.text+'">'+p.pct+'%</span>'+
       '</div>'+
       '<div class="modal-body">'+
         '<div class="modal-section">'+
-          '<div class="ms-head" style="color:'+c.text+'">'+svg("flag")+'<h3>Capaian Tahun Ini</h3></div>'+
-          '<p class="ms-hint">Apa yang sudah kamu capai pada area ini tahun sebelumnya?</p>'+
-          '<textarea id="m-ach" class="ms-textarea" rows="3" placeholder="Tulis capaianmu di sini... contoh: Rutin sholat tepat waktu, menabung 20% gaji, turun 3kg..." style="border-color:'+c.border+';background:'+c.soft+'" '+styleFocus(c.bar)+'>'+esc(cat.achievements)+'</textarea>'+
+          '<div class="ms-head" style="color:'+c.text+'">'+svg("flag")+'<h3>'+esc(t('modal.achievements'))+'</h3></div>'+
+          '<p class="ms-hint">'+esc(t('modal.achievementsHint'))+'</p>'+
+          '<textarea id="m-ach" class="ms-textarea" rows="3" placeholder="'+esc(t('modal.achievementsPlaceholder'))+'" style="border-color:'+c.border+';background:'+c.soft+'" '+styleFocus(c.bar)+'>'+esc(cat.achievements)+'</textarea>'+
         '</div>'+
         '<div class="modal-section">'+
-          '<div class="ms-head" style="color:'+c.text+'">'+svg("spark")+'<h3>Harapan Tahun Depan</h3></div>'+
-          '<p class="ms-hint">Apa capaian yang kamu harapkan di tahun mendatang?</p>'+
-          '<textarea id="m-hop" class="ms-textarea" rows="3" placeholder="Tulis harapanmu di sini... contoh: Hafal 1 juz baru, punya dana darurat 6 bulan, lari 10km tanpa henti..." style="border-color:'+c.border+';background:'+c.soft+'" '+styleFocus(c.bar)+'>'+esc(cat.hopes)+'</textarea>'+
+          '<div class="ms-head" style="color:'+c.text+'">'+svg("spark")+'<h3>'+esc(t('modal.hopes'))+'</h3></div>'+
+          '<p class="ms-hint">'+esc(t('modal.hopesHint'))+'</p>'+
+          '<textarea id="m-hop" class="ms-textarea" rows="3" placeholder="'+esc(t('modal.hopesPlaceholder'))+'" style="border-color:'+c.border+';background:'+c.soft+'" '+styleFocus(c.bar)+'>'+esc(cat.hopes)+'</textarea>'+
         '</div>'+
         '<div class="modal-section">'+
-          '<div class="ms-head" style="color:'+c.text+'">'+svg("list")+'<h3>Langkah-Langkah Terukur</h3></div>'+
-          '<p class="ms-hint">Pecah tujuan menjadi aksi kecil yang konkret & bisa diceklis.</p>'+
+          '<div class="ms-head" style="color:'+c.text+'">'+svg("list")+'<h3>'+esc(t('modal.steps'))+'</h3></div>'+
+          '<p class="ms-hint">'+esc(t('modal.stepsHint'))+'</p>'+
           '<div class="step-input">'+
-            '<input id="m-newstep" class="inp" type="text" placeholder="cth: Olahraga 30 menit, 3x seminggu" style="border-color:'+c.border+';background:'+c.soft+'" '+styleFocus(c.bar)+'>'+
-            '<button class="step-add" id="m-addstep" style="background:'+c.bar+'" disabled>'+svg("plus","ic")+'<span class="hidden-sm" style="display:inline">Tambah</span></button>'+
+            '<input id="m-newstep" class="inp" type="text" placeholder="'+esc(t('modal.stepPlaceholder'))+'" style="border-color:'+c.border+';background:'+c.soft+'" '+styleFocus(c.bar)+'>'+
+            '<button class="step-add" id="m-addstep" style="background:'+c.bar+'" disabled>'+svg("plus","ic")+'<span class="hidden-sm" style="display:inline">'+esc(t('modal.add'))+'</span></button>'+
           '</div>'+
           (cat.steps.length===0 ?
-            '<div class="step-empty" style="border-color:'+c.border+';background:'+c.soft+'"><div class="em">📝</div><div class="t">Belum ada langkah terukur</div><div class="s">Mulai tambahkan aksi kecil pertamamu di atas</div></div>' :
+            '<div class="step-empty" style="border-color:'+c.border+';background:'+c.soft+'"><div class="em">📝</div><div class="t">'+esc(t('modal.stepsEmpty'))+'</div><div class="s">'+esc(t('modal.stepsEmptyHint'))+'</div></div>' :
             '<div class="step-list" id="m-steps">'+
               cat.steps.map(function(s){ return stepItemHTML(s,c,catId); }).join("")+
             '</div>')+
         '</div>'+
       '</div>'+
       '<div class="modal-foot">'+
-        '<span class="sv">💾 Tersimpan otomatis</span>'+
-        '<button class="modal-done" id="modal-done" style="background:'+c.bar+'">Selesai</button>'+
+        '<span class="sv">'+esc(t('modal.saved'))+'</span>'+
+        '<button class="modal-done" id="modal-done" style="background:'+c.bar+'">'+esc(t('modal.done'))+'</button>'+
       '</div>'+
     '</div>'+
   '</div>';
 }
 
 function styleFocus(barColor){
+  // we can't easily do per-color focus ring via inline; use a generic ring
   return 'onfocus="this.style.boxShadow=\'0 0 0 3px '+hexA(barColor,0.3)+'\'" onblur="this.style.boxShadow=\'none\'"';
 }
 function hexA(hex,a){
+  // hex like #10b981
   var r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
   return "rgba("+r+","+g+","+b+","+a+")";
 }
 
 function stepItemHTML(s,c,catId){
+  var markDone = state.lang === 'en' ? 'Mark as done' : 'Tandai selesai';
+  var markUndone = state.lang === 'en' ? 'Mark as not done' : 'Tandai belum selesai';
+  var editLabel = state.lang === 'en' ? 'Edit step' : 'Edit langkah';
+  var delLabel = state.lang === 'en' ? 'Delete step' : 'Hapus langkah';
   if(state.editingStepId === s.id){
     return '<div class="step-item"><input class="step-edit-inp" id="step-edit-'+s.id+'" value="'+esc(s.text)+'" style="border-color:'+c.border+'" '+styleFocus(c.bar)+'>'+
       '<button class="step-act" data-act="commit" data-id="'+s.id+'" data-cat="'+catId+'" style="background:'+c.soft+';color:'+c.text+'">'+svg("check")+'</button></div>';
   }
   return '<div class="step-item">'+
-    '<button class="step-check '+(s.done?"done":"")+'" data-act="toggle" data-id="'+s.id+'" data-cat="'+catId+'" style="'+(s.done?"background:"+c.bar+";":"border-color:"+c.border+";color:"+c.text)+'" aria-label="'+(s.done?"Tandai belum selesai":"Tandai selesai")+'">'+(s.done?svg("check","ic"):"")+'</button>'+
+    '<button class="step-check '+(s.done?"done":"")+'" data-act="toggle" data-id="'+s.id+'" data-cat="'+catId+'" style="'+(s.done?"background:"+c.bar+";":"border-color:"+c.border+";color:"+c.text)+'" aria-label="'+(s.done?esc(markUndone):esc(markDone))+'">'+(s.done?svg("check","ic"):"")+'</button>'+
     '<span class="step-text '+(s.done?"done":"")+'">'+esc(s.text)+'</span>'+
     '<div class="step-actions">'+
-      '<button class="step-act" data-act="edit" data-id="'+s.id+'" data-cat="'+catId+'" aria-label="Edit langkah">'+svg("pencil","ic")+'</button>'+
-      '<button class="step-act del" data-act="delete" data-id="'+s.id+'" data-cat="'+catId+'" aria-label="Hapus langkah">'+svg("trash","ic")+'</button>'+
+      '<button class="step-act" data-act="edit" data-id="'+s.id+'" data-cat="'+catId+'" aria-label="'+esc(editLabel)+'">'+svg("pencil","ic")+'</button>'+
+      '<button class="step-act del" data-act="delete" data-id="'+s.id+'" data-cat="'+catId+'" aria-label="'+esc(delLabel)+'">'+svg("trash","ic")+'</button>'+
     '</div>'+
   '</div>';
 }
@@ -929,19 +1155,19 @@ function stepItemHTML(s,c,catId){
 function confirmResetHTML(){
   return '<div class="confirm-backdrop" id="confirm-backdrop"><div class="confirm">'+
     '<div class="em">⚠️</div>'+
-    '<h3>Reset Semua Data?</h3>'+
-    '<p>Semua resolusi, capaian, dan langkah yang sudah kamu buat akan dihapus permanen. Tindakan ini tidak bisa dibatalkan.</p>'+
+    '<h3>'+esc(t('reset.title'))+'</h3>'+
+    '<p>'+esc(t('reset.desc'))+'</p>'+
     '<div class="confirm-actions">'+
-      '<button class="btn-ghost" id="cf-cancel">Batal</button>'+
-      '<button class="btn-danger" id="cf-ok">Ya, Reset</button>'+
+      '<button class="btn-ghost" id="cf-cancel">'+esc(t('reset.cancel'))+'</button>'+
+      '<button class="btn-danger" id="cf-ok">'+esc(t('reset.confirm'))+'</button>'+
     '</div>'+
   '</div></div>';
 }
 
 function footerHTML(){
   return '<footer class="app-foot"><div class="foot-inner">'+
-    '<p>© 2026 Resolusi 1.0.24 (Beta) | Hak Cipta Dilindungi</p>'+
-    '<p class="sub">Data tersimpan aman di perangkatmu.</p>'+
+    '<p>'+esc(t('footer.copyright'))+'</p>'+
+    '<p class="sub">'+esc(t('footer.note'))+'</p>'+
   '</div></footer>';
 }
 
@@ -949,9 +1175,12 @@ function footerHTML(){
    DASHBOARD BINDINGS
    ========================================================================= */
 function bindDashboard(){
+  bindLangToggle();
+  // edit year toggle
   var btnEditYear = document.getElementById("btn-edit-year");
   btnEditYear.addEventListener("click", function(){ state.editingYear = !state.editingYear; render(); });
 
+  // menu
   var btnMenu = document.getElementById("btn-menu");
   btnMenu.addEventListener("click", function(e){ e.stopPropagation(); state.showMenu = !state.showMenu; render(); });
   var bd = document.getElementById("menu-backdrop");
@@ -973,18 +1202,23 @@ function bindDashboard(){
     reader.readAsText(f); e.target.value="";
   });
 
+  // install banner
   var instHow = document.getElementById("install-how");
   if(instHow) instHow.addEventListener("click", function(){ showInstallGuide(); });
   var instDis = document.getElementById("install-dismiss");
   if(instDis) instDis.addEventListener("click", function(){ localStorage.setItem("resolusi-install-dismissed","1"); render(); });
 
+  // year editor bindings
   bindYearEditor();
 
+  // category cards
   document.querySelectorAll(".cat-card").forEach(function(card){
     card.addEventListener("click", function(){ state.activeCat = card.getAttribute("data-cat"); state.editingStepId=null; render(); });
   });
 
+  // modal
   if(state.activeCat){ bindModal(); }
+  // confirm
   if(state.confirmReset){
     document.getElementById("cf-cancel").addEventListener("click", function(){ state.confirmReset=false; render(); });
     document.getElementById("cf-ok").addEventListener("click", function(){
@@ -1005,6 +1239,7 @@ function bindYearEditor(){
   var yeCal = document.getElementById("ye-cal");
   if(!yeCal) return;
   var d = state.data;
+  // we keep a temp working copy in state.data directly (re-render on cal change)
   yeCal.addEventListener("click", function(e){
     var btn = e.target.closest("button"); if(!btn) return;
     d.calendarType = btn.getAttribute("data-cal");
@@ -1017,6 +1252,7 @@ function bindYearEditor(){
   var yeYear = document.getElementById("ye-year");
   yeYear.addEventListener("input", function(){ d.year = yeYear.value; });
   document.getElementById("ye-cancel").addEventListener("click", function(){
+    // reload from storage to discard unsaved edits
     state.data = load() || emptyData(); state.editingYear=false; render();
   });
   document.getElementById("ye-save").addEventListener("click", function(){
@@ -1048,12 +1284,14 @@ function bindModal(){
   addBtn.addEventListener("click", doAddStep);
 
   function doAddStep(){
-    var t = newStep.value.trim(); if(!t) return;
-    cat.steps.push({ id:uid(), text:t, done:false });
-    save(); state.editingStepId=null; render();
+    var txt = newStep.value.trim(); if(!txt) return;
+    cat.steps.push({ id:uid(), text:txt, done:false });
+    save(); state.editingStepId=null; render(); // re-render modal
+    // refocus
     setTimeout(function(){ var ns=document.getElementById("m-newstep"); if(ns){ ns.focus(); } }, 0);
   }
 
+  // steps delegation
   var stepsEl = document.getElementById("m-steps");
   if(stepsEl){
     stepsEl.addEventListener("click", function(e){
@@ -1079,6 +1317,7 @@ function bindModal(){
         state.editingStepId=null; render();
       }
     });
+    // commit on Enter / blur
     stepsEl.addEventListener("keydown", function(e){
       if(e.target.classList.contains("step-edit-inp")){
         if(e.key==="Enter"){ e.preventDefault(); var id=e.target.id.replace("step-edit-",""); commitStep(id); }
@@ -1087,6 +1326,7 @@ function bindModal(){
     });
     stepsEl.addEventListener("focusout", function(e){
       if(e.target.classList.contains("step-edit-inp")){
+        // small delay so click on commit btn works
         setTimeout(function(){
           if(state.editingStepId === e.target.id.replace("step-edit-","")){
             commitStep(e.target.id.replace("step-edit-",""));
@@ -1113,7 +1353,7 @@ function updateModalProgress(c, cat){
   var progBar = document.querySelector(".modal-prog .bar > div");
   if(progBar) progBar.style.width = p.pct+"%";
   var lbls = document.querySelectorAll(".modal-prog .lbl");
-  if(lbls[0]) lbls[0].textContent = p.done+" dari "+p.total+" langkah selesai";
+  if(lbls[0]) lbls[0].textContent = p.done+' '+t('modal.of')+' '+p.total+' '+t('modal.stepsComplete');
   var pct = document.querySelector(".modal-prog .pct");
   if(pct) pct.textContent = p.pct+"%";
 }
@@ -1135,22 +1375,22 @@ function exportData(){
 }
 
 /* =========================================================================
-   INSTALL GUIDE
+   INSTALL GUIDE (modal sederhana)
    ========================================================================= */
 function showInstallGuide(){
   var html = '<div class="confirm-backdrop" id="ig-backdrop"><div class="confirm" style="max-width:440px;text-align:left;max-height:90vh;overflow-y:auto">'+
     '<div style="text-align:center"><div class="em" style="font-size:36px">📲</div>'+
-    '<h3 style="margin-top:6px">Pasang di Layar Utama</h3></div>'+
+    '<h3 style="margin-top:6px">'+esc(t('install.title'))+'</h3></div>'+
     '<div style="font-size:13px;color:#57534e;line-height:1.6;margin-top:14px">'+
-      '<p style="font-weight:700;color:#44403c;margin-bottom:6px">🤖 Android</p>'+
-      '<p style="margin-left:12px">Buka aplikasi di <strong>Chrome</strong> → tap menu <strong>⋮</strong> → <strong>"Tambahkan ke Layar Utama"</strong> / "Install app". Ikon muncul di layar HP seperti aplikasi biasa.</p>'+
-      '<p style="font-weight:700;color:#44403c;margin:12px 0 6px">🍎 iPhone / iPad</p>'+
-      '<p style="margin-left:12px">Buka aplikasi di <strong>Safari</strong> → tap tombol <strong>Bagikan □↑</strong> → <strong>"Tambah ke Layar Utama"</strong>. Buka dari ikon di layar — bekerja offline penuh.</p>'+
-      '<p style="font-weight:700;color:#44403c;margin:12px 0 6px">💻 Komputer</p>'+
-      '<p style="margin-left:12px">Buka aplikasi di <strong>Chrome/Edge</strong> → klik ikon <strong>Install</strong> di address bar (ikon ⊕ atau +) → jadi aplikasi desktop dengan ikon sendiri.</p>'+
-      '<p style="margin-top:12px;font-size:12px;color:#a8a29e">💡 Setelah terpasang, aplikasi bisa dibuka tanpa internet. Data tersimpan otomatis di perangkat.</p>'+
+      '<p style="font-weight:700;color:#44403c;margin-bottom:6px">'+esc(t('install.androidTitle'))+'</p>'+
+      '<p style="margin-left:12px">'+t('install.androidDesc')+'</p>'+
+      '<p style="font-weight:700;color:#44403c;margin:12px 0 6px">'+esc(t('install.iphoneTitle'))+'</p>'+
+      '<p style="margin-left:12px">'+t('install.iphoneDesc')+'</p>'+
+      '<p style="font-weight:700;color:#44403c;margin:12px 0 6px">'+esc(t('install.computerTitle'))+'</p>'+
+      '<p style="margin-left:12px">'+t('install.computerDesc')+'</p>'+
+      '<p style="margin-top:12px;font-size:12px;color:#a8a29e">'+esc(t('install.tip'))+'</p>'+
     '</div>'+
-    '<div class="confirm-actions" style="margin-top:16px"><button class="btn-ghost" id="ig-close" style="flex:1">Mengerti</button></div>'+
+    '<div class="confirm-actions" style="margin-top:16px"><button class="btn-ghost" id="ig-close" style="flex:1">'+esc(t('install.close'))+'</button></div>'+
   '</div></div>';
   var div = document.createElement("div"); div.innerHTML = html;
   document.body.appendChild(div.firstChild);
@@ -1171,14 +1411,17 @@ function esc(s){
    ========================================================================= */
 function init(){
   state.data = load();
+  state.lang = getLang();
+  state.accessUnlocked = isActivated();
   if(!state.data){
     state.onbDraft = emptyData();
     state.onbDraft.year = suggestYear(state.onbDraft.calendarType);
   }
-  state.accessUnlocked = isActivated();
   state.view = "app";
-  state.quoteIdx = Math.floor(Math.random()*QUOTES.length);
-  setInterval(function(){ state.quoteIdx = (state.quoteIdx+1)%QUOTES.length; if(state.accessUnlocked && state.data && state.data.year && !state.activeCat) render(); }, 8000);
+  state.quoteIdx = Math.floor(Math.random()*QUOTE_COUNT);
+  // rotasi quote
+  setInterval(function(){ state.quoteIdx = (state.quoteIdx+1)%QUOTE_COUNT; if(state.accessUnlocked && state.data && state.data.year && !state.activeCat) render(); }, 8000);
+  // esc untuk tutup modal
   document.addEventListener("keydown", function(e){
     if(e.key==="Escape"){
       if(state.confirmReset){ state.confirmReset=false; render(); }
